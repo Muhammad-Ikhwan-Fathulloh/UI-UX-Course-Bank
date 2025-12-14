@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kurikulum UX Design Intensif | 12 Pertemuan</title>
+    <!-- Judul dokumen diatur oleh JS -->
+    <title id="documentTitle">Kurikulum UX Design Intensif | 12 Pertemuan</title>
     <!-- Memuat Tailwind CSS untuk styling modern dan responsif -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Konfigurasi Font Inter -->
@@ -24,36 +25,37 @@
 </head>
 <body class="min-h-screen p-4 sm:p-8">
 
-    <!-- Header / Judul Utama -->
-    <header class="text-center mb-10">
-        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">Kurikulum UX Design Intensif</h1>
-        <p class="text-xl text-indigo-600 font-medium">12 Pertemuan Praktis - Dari Masalah hingga Prototipe</p>
+    <!-- Header / Judul Utama dan Tombol Bahasa -->
+    <header class="max-w-7xl mx-auto flex justify-between items-start mb-10">
+        <div class="flex-grow text-center pr-10">
+            <h1 id="mainTitle" class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2"></h1>
+            <p id="subTitle" class="text-xl text-indigo-600 font-medium"></p>
+        </div>
+        <!-- Tombol Toggle Bahasa -->
+        <button id="langToggle" onclick="toggleLanguage()" class="bg-indigo-100 text-indigo-700 hover:bg-indigo-200 font-semibold py-2 px-4 rounded-lg shadow-sm transition duration-150">
+            <!-- Teks tombol akan diisi oleh JS -->
+        </button>
     </header>
 
     <!-- Kontainer Utama Grid Modul/Pertemuan -->
     <div class="max-w-7xl mx-auto">
         <!-- Modul 1 -->
-        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 1: MASALAH & STRUKTUR (UX)</h2>
-        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <h2 id="mod1Title" class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8"></h2>
         <div id="module1Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <!-- Data Kurikulum akan diisi secara dinamis menggunakan JS -->
         </div>
 
         <!-- Modul 2 -->
-        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 2: KERANGKA & TATA LETAK</h2>
-        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <h2 id="mod2Title" class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8"></h2>
         <div id="module2Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         </div>
 
         <!-- Modul 3 -->
-        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 3: VISUAL & ESTETIKA</h2>
-        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <h2 id="mod3Title" class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8"></h2>
         <div id="module3Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         </div>
 
         <!-- Modul 4 -->
-        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 4: INTERAKSI & PENGUJIAN</h2>
-        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <h2 id="mod4Title" class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8"></h2>
         <div id="module4Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         </div>
     </div>
@@ -62,75 +64,237 @@
     <div id="detailModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center p-4 z-50">
         <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 sm:p-8">
             <h3 id="modalTitle" class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"></h3>
-            <p class="text-sm font-semibold text-indigo-600 mb-2">Detail Praktik (90 Menit):</p>
+            <p id="modalDetailTitle" class="text-sm font-semibold text-indigo-600 mb-2"></p>
             <p id="modalDetail" class="text-gray-700 mb-4"></p>
-            <p class="text-sm font-semibold text-indigo-600 mb-2">Integrasi Teori Singkat (Analog):</p>
+            <p id="modalTheoryTitle" class="text-sm font-semibold text-indigo-600 mb-2"></p>
             <p id="modalTheory" class="text-gray-700 mb-4"></p>
-            <p class="text-sm font-semibold text-indigo-600 mb-2">Tools & Link Praktik:</p>
+            <p id="modalToolsTitle" class="text-sm font-semibold text-indigo-600 mb-2"></p>
             <p id="modalTools" class="text-gray-700 mb-6"></p>
 
-            <button onclick="closeModal()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">Tutup</button>
+            <button id="modalCloseButton" onclick="closeModal()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md"></button>
         </div>
     </div>
 
     <script>
-        // Array Data Kurikulum
+        let currentLang = 'id'; // Bahasa default
+
+        // Definisi Teks Statis dalam Dua Bahasa
+        const translations = {
+            id: {
+                document_title: 'Kurikulum UX Design Intensif | 12 Pertemuan',
+                main_title: 'Kurikulum UX Design Intensif',
+                sub_title: '12 Pertemuan Praktis - Dari Masalah hingga Prototipe',
+                module1_title: 'MODUL 1: MASALAH & STRUKTUR (UX)',
+                module2_title: 'MODUL 2: KERANGKA & TATA LETAK',
+                module3_title: 'MODUL 3: VISUAL & ESTETIKA',
+                module4_title: 'MODUL 4: INTERAKSI & PENGUJIAN',
+                lang_button: 'English',
+                session_prefix: 'Pertemuan',
+                active_status: 'AKTIF',
+                locked_status: 'TERKUNCI',
+                available_after: 'Tersedia Setelah P',
+                start_practice: 'Mulai Praktik',
+                view_details: 'Lihat Detail Tugas',
+                detail_title: 'Detail Praktik (90 Menit):',
+                theory_title: 'Integrasi Teori Singkat (Analog):',
+                tools_title: 'Tools & Link Praktik:',
+                close_button: 'Tutup',
+            },
+            en: {
+                document_title: 'Intensive UX Design Curriculum | 12 Sessions',
+                main_title: 'Intensive UX Design Curriculum',
+                sub_title: '12 Practical Sessions - From Problem to Prototype',
+                module1_title: 'MODULE 1: PROBLEM & STRUCTURE (UX)',
+                module2_title: 'MODULE 2: FRAMEWORK & LAYOUT',
+                module3_title: 'MODULE 3: VISUALS & AESTHETICS',
+                module4_title: 'MODULE 4: INTERACTION & TESTING',
+                lang_button: 'Bahasa Indonesia',
+                session_prefix: 'Session',
+                active_status: 'ACTIVE',
+                locked_status: 'LOCKED',
+                available_after: 'Available After S',
+                start_practice: 'Start Practice',
+                view_details: 'View Task Details',
+                detail_title: 'Practice Details (90 Minutes):',
+                theory_title: 'Brief Theory Integration (Analog):',
+                tools_title: 'Tools & Practice Links:',
+                close_button: 'Close',
+            }
+        };
+
+        // Array Data Kurikulum dengan Teks Bilingual
         const curriculum = [
             // Modul 1
-            { id: 1, modul: 1, title: 'Analisis Kebutuhan', focus: 'Analisis Masalah Nyata & Pengguna', detail: 'Wawancara Cepat (45m): Wawancara berpasangan, mencari 3 masalah. Perumusan Masalah (45m): Pilih 1 masalah & definisikan Pengguna (Persona dasar).', theory: 'Desain = Memecahkan Masalah.', tools: 'Kertas, Post-it, Spidol.', active: true },
-            { id: 2, modul: 1, title: 'Ideasi & Persona', focus: 'Brainstorming Solusi & Persona Detil', detail: 'Crazy 8s (45m): Sketsa 8 ide kasar di kertas. Persona Lengkap (45m): Membuat 1-2 persona (termasuk kebutuhan mobile vs. desktop).', theory: 'Konsep Needs vs Wants.', tools: 'Kertas, Template Persona.', active: false },
-            { id: 3, modul: 1, title: 'Pemetaan Alur', focus: 'User Flow Mobile dan Website', detail: 'Menentukan 3 Tugas Kunci (20m). Menggambar Flowchart (70m): Gambar kotak-panah untuk alur mobile dan desktop (membandingkan perbedaannya).', theory: 'Alur Aplikasi = Peta Jalan.', tools: 'Lucidchart/Miro (Trial) atau Kertas.', active: false },
+            { id: 1, modul: 1, active: true,
+              title: { id: 'Analisis Kebutuhan', en: 'Needs Analysis' },
+              focus: { id: 'Analisis Masalah Nyata & Pengguna', en: 'Real Problem & User Analysis' },
+              detail: { id: 'Wawancara Cepat (45m): Wawancara berpasangan, mencari 3 masalah. Perumusan Masalah (45m): Pilih 1 masalah & definisikan Pengguna (Persona dasar).', en: 'Quick Interview (45m): Paired interview, find 3 problems. Problem Formulation (45m): Select 1 problem & define User (Basic Persona).' },
+              theory: { id: 'Desain = Memecahkan Masalah.', en: 'Design = Problem Solving.' },
+              tools: { id: 'Kertas, Post-it, Spidol.', en: 'Paper, Post-it Notes, Markers.' }
+            },
+            { id: 2, modul: 1, active: false,
+              title: { id: 'Ideasi & Persona', en: 'Ideation & Persona' },
+              focus: { id: 'Brainstorming Solusi & Persona Detil', en: 'Solution Brainstorming & Detailed Persona' },
+              detail: { id: 'Crazy 8s (45m): Sketsa 8 ide kasar di kertas. Persona Lengkap (45m): Membuat 1-2 persona (termasuk kebutuhan mobile vs. desktop).', en: 'Crazy 8s (45m): Sketch 8 rough ideas on paper. Full Persona (45m): Create 1-2 personas (including mobile vs. desktop needs).' },
+              theory: { id: 'Konsep Needs vs Wants.', en: 'Concept of Needs vs Wants.' },
+              tools: { id: 'Kertas, Template Persona.', en: 'Paper, Persona Template.' }
+            },
+            { id: 3, modul: 1, active: false,
+              title: { id: 'Pemetaan Alur', en: 'Flow Mapping' },
+              focus: { id: 'User Flow Mobile dan Website', en: 'Mobile and Website User Flow' },
+              detail: { id: 'Menentukan 3 Tugas Kunci (20m). Menggambar Flowchart (70m): Gambar kotak-panah untuk alur mobile dan desktop (membandingkan perbedaannya).', en: 'Determine 3 Key Tasks (20m). Draw Flowchart (70m): Draw box-arrows for mobile and desktop flow (comparing differences).' },
+              theory: { id: 'Alur Aplikasi = Peta Jalan.', en: 'App Flow = Roadmap.' },
+              tools: { id: 'Lucidchart/Miro (Trial) atau Kertas.', en: 'Lucidchart/Miro (Trial) or Paper.' }
+            },
             // Modul 2
-            { id: 4, modul: 2, title: 'Wireframe Lo-Fi', focus: 'Sketsa Wireframe Kertas (Lo-Fi)', detail: 'Sketsa Halaman (90m): Menggambar 5 halaman (misal: Home, Detail, Profil) di kertas. Fokus pada letak komponen di kedua format.', theory: 'Wireframe = Tulang Rangka (Fokus Letak, Bukan Warna).', tools: 'Kertas, Pensil, Template Smartphone & Monitor.', active: false },
-            { id: 5, modul: 2, title: 'Figma Setup', focus: 'Pengenalan Figma & Digitalisasi Wireframe', detail: 'Setup Figma (20m): Membuat frame Mobile & Desktop. Digitalisasi (70m): Mengubah 5 sketsa kertas menjadi kotak abu-abu/hitam di Figma.', theory: 'Figma = Studio Desain Digital.', tools: 'Figma (https://www.figma.com/education/)', active: false },
-            { id: 6, modul: 2, title: 'Layout Responsif', focus: 'Tata Letak (Layout) & Navigasi Responsif', detail: 'Layout & Grid (40m): Menggunakan Grid dasar Figma. Navigasi Bar (50m): Mendesain Tab Bar (Mobile) vs. Header Menu (Desktop) dan konsistensinya.', theory: 'Layout = Keteraturan. Responsive = Berubah Sesuai Ukuran Layar.', tools: 'Figma (Fitur Constraints Dasar).', active: false },
+            { id: 4, modul: 2, active: false,
+              title: { id: 'Wireframe Lo-Fi', en: 'Lo-Fi Wireframe' },
+              focus: { id: 'Sketsa Wireframe Kertas (Lo-Fi)', en: 'Paper Wireframe Sketch (Lo-Fi)' },
+              detail: { id: 'Sketsa Halaman (90m): Menggambar 5 halaman (misal: Home, Detail, Profil) di kertas. Fokus pada letak komponen di kedua format.', en: 'Page Sketch (90m): Draw 5 pages (e.g., Home, Detail, Profile) on paper. Focus on component placement in both formats.' },
+              theory: { id: 'Wireframe = Tulang Rangka (Fokus Letak, Bukan Warna).', en: 'Wireframe = Skeleton (Focus on Placement, Not Color).' },
+              tools: { id: 'Kertas, Pensil, Template Smartphone & Monitor.', en: 'Paper, Pencil, Smartphone & Monitor Templates.' }
+            },
+            { id: 5, modul: 2, active: false,
+              title: { id: 'Figma Setup', en: 'Figma Setup' },
+              focus: { id: 'Pengenalan Figma & Digitalisasi Wireframe', en: 'Figma Introduction & Wireframe Digitization' },
+              detail: { id: 'Setup Figma (20m): Membuat frame Mobile & Desktop. Digitalisasi (70m): Mengubah 5 sketsa kertas menjadi kotak abu-abu/hitam di Figma.', en: 'Figma Setup (20m): Create Mobile & Desktop frames. Digitization (70m): Convert 5 paper sketches into gray/black boxes in Figma.' },
+              theory: { id: 'Figma = Studio Desain Digital.', en: 'Figma = Digital Design Studio.' },
+              tools: { id: 'Figma (https://www.figma.com/education/)', en: 'Figma (https://www.figma.com/education/)' }
+            },
+            { id: 6, modul: 2, active: false,
+              title: { id: 'Layout Responsif', en: 'Responsive Layout' },
+              focus: { id: 'Tata Letak (Layout) & Navigasi Responsif', en: 'Responsive Layout & Navigation' },
+              detail: { id: 'Layout & Grid (40m): Menggunakan Grid dasar Figma. Navigasi Bar (50m): Mendesain Tab Bar (Mobile) vs. Header Menu (Desktop) dan konsistensinya.', en: 'Layout & Grid (40m): Use basic Figma Grid. Navigation Bar (50m): Design Tab Bar (Mobile) vs. Header Menu (Desktop) and consistency.' },
+              theory: { id: 'Layout = Keteraturan. Responsive = Berubah Sesuai Ukuran Layar.', en: 'Layout = Orderliness. Responsive = Changes According to Screen Size.' },
+              tools: { id: 'Figma (Fitur Constraints Dasar).', en: 'Figma (Basic Constraints Feature).' }
+            },
             // Modul 3
-            { id: 7, modul: 3, title: 'Warna & Kontras', focus: 'Palet Warna & Penerapan Kontras', detail: 'Pemilihan Palet (30m): Pilih 3 warna utama (Primer, Sekunder, Netral). Uji Kontras (60m): Terapkan warna ke tombol/latar belakang. Uji perpaduan warna teks/latar di Mobile dan Desktop.', theory: 'Psikologi Warna & Kontras = Keterbacaan.', tools: 'Figma, Coolors (https://coolors.co)', active: false },
-            { id: 8, modul: 3, title: 'Tipografi', focus: 'Hirarki Teks & Pemilihan Font', detail: 'Memilih Font (30m): Pilih 2 font (Display & Body). Terapkan Hirarki (60m): Mengatur Style teks (H1, H2, Body) untuk Mobile (ukuran lebih kecil) dan Desktop (ukuran lebih besar).', theory: 'Tipografi = Kualitas Pesan.', tools: 'Figma (Google Fonts), Type Scale (https://typescale.com/)', active: false },
-            { id: 9, modul: 3, title: 'Desain Komponen', focus: 'Komponen UI Interaktif', detail: 'Membuat Komponen (90m): Desain Tombol (Normal, Hover/Saat Diklik), Input Field, dan Card. Gunakan fitur Component di Figma untuk efisiensi di Mobile & Desktop.', theory: 'Component = Barang yang Bisa Dipakai Berulang.', tools: 'Figma (Fitur Component).', active: false },
+            { id: 7, modul: 3, active: false,
+              title: { id: 'Warna & Kontras', en: 'Color & Contrast' },
+              focus: { id: 'Palet Warna & Penerapan Kontras', en: 'Color Palette & Contrast Application' },
+              detail: { id: 'Pemilihan Palet (30m): Pilih 3 warna utama (Primer, Sekunder, Netral). Uji Kontras (60m): Terapkan warna ke tombol/latar belakang. Uji perpaduan warna teks/latar di Mobile dan Desktop.', en: 'Palette Selection (30m): Choose 3 main colors (Primary, Secondary, Neutral). Contrast Test (60m): Apply colors to buttons/backgrounds. Test text/background color blend on Mobile and Desktop.' },
+              theory: { id: 'Psikologi Warna & Kontras = Keterbacaan.', en: 'Color Psychology & Contrast = Readability.' },
+              tools: { id: 'Figma, Coolors (https://coolors.co)', en: 'Figma, Coolors (https://coolors.co)' }
+            },
+            { id: 8, modul: 3, active: false,
+              title: { id: 'Tipografi', en: 'Typography' },
+              focus: { id: 'Hirarki Teks & Pemilihan Font', en: 'Text Hierarchy & Font Selection' },
+              detail: { id: 'Memilih Font (30m): Pilih 2 font (Display & Body). Terapkan Hirarki (60m): Mengatur Style teks (H1, H2, Body) untuk Mobile (ukuran lebih kecil) dan Desktop (ukuran lebih besar).', en: 'Choose Font (30m): Select 2 fonts (Display & Body). Apply Hierarchy (60m): Set text Styles (H1, H2, Body) for Mobile (smaller size) and Desktop (larger size).' },
+              theory: { id: 'Tipografi = Kualitas Pesan.', en: 'Typography = Message Quality.' },
+              tools: { id: 'Figma (Google Fonts), Type Scale (https://typescale.com/)', en: 'Figma (Google Fonts), Type Scale (https://typescale.com/)' }
+            },
+            { id: 9, modul: 3, active: false,
+              title: { id: 'Desain Komponen', en: 'Component Design' },
+              focus: { id: 'Komponen UI Interaktif', en: 'Interactive UI Components' },
+              detail: { id: 'Membuat Komponen (90m): Desain Tombol (Normal, Hover/Saat Diklik), Input Field, dan Card. Gunakan fitur Component di Figma untuk efisiensi di Mobile & Desktop.', en: 'Create Components (90m): Design Buttons (Normal, Hover/Clicked), Input Fields, and Cards. Use the Component feature in Figma for efficiency on Mobile & Desktop.' },
+              theory: { id: 'Component = Barang yang Bisa Dipakai Berulang.', en: 'Component = Reusable Item.' },
+              tools: { id: 'Figma (Fitur Component).', en: 'Figma (Component Feature).' }
+            },
             // Modul 4
-            { id: 10, modul: 4, title: 'Ikon & Finalisasi', focus: 'Membuat Ikon & Konsolidasi Desain', detail: 'Ikonografi (45m): Menggunakan library ikon gratis dan menerapkannya di Nav Bar dan tombol. Finalisasi (45m): Cek konsistensi warna, font, dan komponen di semua 5 halaman mobile & desktop.', theory: 'Ikon = Simbol yang Dipahami Universal.', tools: 'Figma, Material Symbols (https://fonts.google.com/icons)', active: false },
-            { id: 11, modul: 4, title: 'Prototipe & Uji Coba', focus: 'Prototipe Interaktif & Usability Testing', detail: 'Menghubungkan Alur (45m): Gunakan Figma Prototype Tool untuk menghubungkan tombol di Mobile & Desktop. Tes Berpasangan (45m): Saling menguji prototipe (observer & tester), mencatat 3 Titik Bingung.', theory: 'Prototipe = Simulasi Aplikasi. Kesalahan = Peluang Perbaikan.', tools: 'Figma Prototype Tool, Lembar Observasi (Kertas).', active: false },
-            { id: 12, modul: 4, title: 'Iterasi & Presentasi', focus: 'Re-Design & Presentasi Akhir', detail: 'Analisis Feedback & Iterasi (50m): Memperbaiki 3 masalah terbesar di desain Mobile & Desktop. Presentasi Proyek (40m): Sampaikan Masalah, Solusi, Hasil Uji Coba, dan Perbaikan Akhir (Iterasi) yang dilakukan.', theory: 'Iterasi = Proses Perbaikan Berulang. Storytelling Desain.', tools: 'Figma, Laptop/Proyektor.', active: false }
+            { id: 10, modul: 4, active: false,
+              title: { id: 'Ikon & Finalisasi', en: 'Icons & Finalization' },
+              focus: { id: 'Membuat Ikon & Konsolidasi Desain', en: 'Creating Icons & Design Consolidation' },
+              detail: { id: 'Ikonografi (45m): Menggunakan library ikon gratis dan menerapkannya di Nav Bar dan tombol. Finalisasi (45m): Cek konsistensi warna, font, dan komponen di semua 5 halaman mobile & desktop.', en: 'Iconography (45m): Use a free icon library and apply them to Nav Bar and buttons. Finalization (45m): Check color, font, and component consistency across all 5 mobile & desktop pages.' },
+              theory: { id: 'Ikon = Simbol yang Dipahami Universal.', en: 'Icon = Universally Understood Symbol.' },
+              tools: { id: 'Figma, Material Symbols (https://fonts.google.com/icons)', en: 'Figma, Material Symbols (https://fonts.google.com/icons)' }
+            },
+            { id: 11, modul: 4, active: false,
+              title: { id: 'Prototipe & Uji Coba', en: 'Prototype & Testing' },
+              focus: { id: 'Prototipe Interaktif & Usability Testing', en: 'Interactive Prototype & Usability Testing' },
+              detail: { id: 'Menghubungkan Alur (45m): Gunakan Figma Prototype Tool untuk menghubungkan tombol di Mobile & Desktop. Tes Berpasangan (45m): Saling menguji prototipe (observer & tester), mencatat 3 Titik Bingung.', en: 'Connect Flow (45m): Use Figma Prototype Tool to connect buttons on Mobile & Desktop. Paired Test (45m): Test prototypes with each other (observer & tester), note 3 Confusing Points.' },
+              theory: { id: 'Prototipe = Simulasi Aplikasi. Kesalahan = Peluang Perbaikan.', en: 'Prototype = Application Simulation. Errors = Opportunity for Improvement.' },
+              tools: { id: 'Figma Prototype Tool, Lembar Observasi (Kertas).', en: 'Figma Prototype Tool, Observation Sheet (Paper).' }
+            },
+            { id: 12, modul: 4, active: false,
+              title: { id: 'Iterasi & Presentasi', en: 'Iteration & Presentation' },
+              focus: { id: 'Re-Design & Presentasi Akhir', en: 'Re-Design & Final Presentation' },
+              detail: { id: 'Analisis Feedback & Iterasi (50m): Memperbaiki 3 masalah terbesar di desain Mobile & Desktop. Presentasi Proyek (40m): Sampaikan Masalah, Solusi, Hasil Uji Coba, dan Perbaikan Akhir (Iterasi) yang dilakukan.', en: 'Feedback Analysis & Iteration (50m): Fix the 3 biggest problems in Mobile & Desktop design. Project Presentation (40m): Convey Problem, Solution, Test Results, and Final Improvement (Iteration).' },
+              theory: { id: 'Iterasi = Proses Perbaikan Berulang. Storytelling Desain.', en: 'Iteration = Repetitive Improvement Process. Design Storytelling.' },
+              tools: { id: 'Figma, Laptop/Proyektor.', en: 'Figma, Laptop/Projector.' }
+            }
         ];
+
+        // Fungsi untuk memperbarui semua teks statis di UI
+        function updateUI() {
+            const lang = currentLang;
+            const t = translations[lang];
+
+            // Update Header & Titles
+            document.getElementById('documentTitle').textContent = t.document_title;
+            document.getElementById('mainTitle').textContent = t.main_title;
+            document.getElementById('subTitle').textContent = t.sub_title;
+            document.getElementById('mod1Title').textContent = t.module1_title;
+            document.getElementById('mod2Title').textContent = t.module2_title;
+            document.getElementById('mod3Title').textContent = t.module3_title;
+            document.getElementById('mod4Title').textContent = t.module4_title;
+            document.getElementById('langToggle').textContent = t.lang_button;
+
+            // Update Modal Text (initial setup)
+            document.getElementById('modalDetailTitle').textContent = t.detail_title;
+            document.getElementById('modalTheoryTitle').textContent = t.theory_title;
+            document.getElementById('modalToolsTitle').textContent = t.tools_title;
+            document.getElementById('modalCloseButton').textContent = t.close_button;
+
+            // Re-render cards
+            clearContainers();
+            initializeCurriculum();
+        }
+        
+        // Fungsi untuk menghapus semua kartu sebelum re-render
+        function clearContainers() {
+            document.getElementById('module1Grid').innerHTML = '';
+            document.getElementById('module2Grid').innerHTML = '';
+            document.getElementById('module3Grid').innerHTML = '';
+            document.getElementById('module4Grid').innerHTML = '';
+        }
+
+        // Fungsi untuk mengganti bahasa
+        function toggleLanguage() {
+            currentLang = (currentLang === 'id' ? 'en' : 'id');
+            updateUI();
+        }
+
 
         // Fungsi untuk membuat elemen kartu (card)
         function createCard(item) {
+            const lang = currentLang;
+            const t = translations[lang];
             const isActive = item.active;
+
             const card = document.createElement('div');
-            // Menambahkan kelas card-content-wrapper untuk layout flex
             card.className = `p-6 rounded-xl shadow-lg transition duration-300 transform hover:shadow-xl ${isActive ? 'bg-white border-4 border-indigo-500' : 'bg-gray-100 opacity-70 cursor-not-allowed'} card-content-wrapper`;
 
             // Nomor Pertemuan
             const number = document.createElement('div');
+            const statusText = isActive ? t.active_status : t.locked_status;
             number.className = `text-sm font-semibold mb-2 ${isActive ? 'text-indigo-600' : 'text-gray-400'}`;
-            number.textContent = `Pertemuan ${item.id} - ${isActive ? 'AKTIF' : 'TERKUNCI'}`;
+            number.textContent = `${t.session_prefix} ${item.id} - ${statusText}`;
 
             // Judul Pertemuan
             const title = document.createElement('h3');
             title.className = `text-xl font-bold mb-3 ${isActive ? 'text-gray-900' : 'text-gray-500'}`;
-            title.textContent = item.title;
+            title.textContent = item.title[lang];
 
             // Fokus Praktik
             const focus = document.createElement('p');
             focus.className = 'text-sm mb-4 line-clamp-2 text-gray-600 h-10';
-            focus.textContent = item.focus;
+            focus.textContent = item.focus[lang];
 
             // Kontainer untuk Tombol/Link
             const buttonWrapper = document.createElement('div');
-            buttonWrapper.className = 'mt-4'; // Margin top untuk memisahkan dari fokus teks
+            buttonWrapper.className = 'mt-4';
 
             if (isActive) {
                 // 1. Link Utama (Mulai Praktik) - Tautan ke halaman baru
                 const startLink = document.createElement('a');
                 startLink.href = `/pertemuan${item.id}`; // Contoh: /pertemuan1
-                startLink.textContent = 'Mulai Praktik';
+                startLink.textContent = t.start_practice;
                 startLink.className = 'w-full block text-center font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md focus:outline-none focus:ring-4 bg-indigo-600 hover:bg-indigo-700 text-white focus:ring-indigo-300';
                 buttonWrapper.appendChild(startLink);
 
                 // 2. Tombol Sekunder (Lihat Detail Tugas) - Membuka modal
                 const detailButton = document.createElement('button');
-                detailButton.textContent = 'Lihat Detail Tugas';
+                detailButton.textContent = t.view_details;
                 detailButton.className = 'mt-2 w-full text-sm text-indigo-500 hover:text-indigo-700 font-medium transition duration-200';
                 detailButton.onclick = () => showModal(item);
                 buttonWrapper.appendChild(detailButton);
@@ -138,7 +302,8 @@
             } else {
                 // Tombol Non-aktif
                 const button = document.createElement('button');
-                button.textContent = 'Tersedia Setelah P' + (item.id - 1);
+                const lockText = t.available_after + (item.id - 1);
+                button.textContent = lockText;
                 button.className = 'w-full font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md focus:outline-none bg-gray-300 text-gray-500 cursor-not-allowed';
                 button.disabled = true;
                 buttonWrapper.appendChild(button);
@@ -155,16 +320,29 @@
 
         // Fungsi untuk menampilkan modal
         function showModal(item) {
-            document.getElementById('modalTitle').textContent = `Pertemuan ${item.id}: ${item.title}`;
-            document.getElementById('modalDetail').textContent = item.detail;
-            document.getElementById('modalTheory').textContent = item.theory;
+            const lang = currentLang;
+            document.getElementById('modalTitle').textContent = `${translations[lang].session_prefix} ${item.id}: ${item.title[lang]}`;
+            document.getElementById('modalDetail').textContent = item.detail[lang];
+            document.getElementById('modalTheory').textContent = item.theory[lang];
 
             // Mengganti koma dengan badge/pill untuk tampilan Tools
-            const toolsHtml = item.tools.split(',').map(tool => `<span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">${tool.trim()}</span>`).join('');
+            const toolsHtml = item.tools[lang].split(',').map(tool => `<span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">${tool.trim()}</span>`).join('');
             document.getElementById('modalTools').innerHTML = toolsHtml;
+            
+            // Perbarui teks statis modal saat modal dibuka (sebagai fallback/redundansi)
+            updateModalStaticText();
 
             document.getElementById('detailModal').classList.remove('hidden');
             document.getElementById('detailModal').classList.add('flex');
+        }
+
+        // Fungsi untuk memperbarui teks statis di dalam modal (dipanggil saat render/toggle)
+        function updateModalStaticText() {
+            const t = translations[currentLang];
+            document.getElementById('modalDetailTitle').textContent = t.detail_title;
+            document.getElementById('modalTheoryTitle').textContent = t.theory_title;
+            document.getElementById('modalToolsTitle').textContent = t.tools_title;
+            document.getElementById('modalCloseButton').textContent = t.close_button;
         }
 
         // Fungsi untuk menutup modal
@@ -175,7 +353,6 @@
 
         // Fungsi untuk inisialisasi dan render kartu
         function initializeCurriculum() {
-            // Menggunakan ID yang spesifik dan valid untuk menargetkan setiap kontainer modul.
             const moduleContainers = {
                 1: document.getElementById('module1Grid'),
                 2: document.getElementById('module2Grid'),
@@ -185,14 +362,14 @@
 
             curriculum.forEach(item => {
                 const cardElement = createCard(item);
-                // Pastikan kontainer ditemukan sebelum menambahkan elemen
                 if (moduleContainers[item.modul]) {
                     moduleContainers[item.modul].appendChild(cardElement);
                 }
             });
         }
 
-        window.onload = initializeCurriculum;
+        // Inisialisasi: Panggil updateUI untuk memuat bahasa default (ID) dan merender kartu
+        window.onload = updateUI;
     </script>
 </body>
 </html>
