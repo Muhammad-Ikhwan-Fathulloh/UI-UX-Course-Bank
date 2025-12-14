@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurikulum UX Design Intensif | 12 Pertemuan</title>
+    <!-- Memuat Tailwind CSS untuk styling modern dan responsif -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Konfigurasi Font Inter -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fc;
+        }
+        /* Custom class for consistent card height and content alignment */
+        .card-content-wrapper {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="min-h-screen p-4 sm:p-8">
+
+    <!-- Header / Judul Utama -->
+    <header class="text-center mb-10">
+        <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">Kurikulum UX Design Intensif</h1>
+        <p class="text-xl text-indigo-600 font-medium">12 Pertemuan Praktis - Dari Masalah hingga Prototipe</p>
+    </header>
+
+    <!-- Kontainer Utama Grid Modul/Pertemuan -->
+    <div class="max-w-7xl mx-auto">
+        <!-- Modul 1 -->
+        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 1: MASALAH & STRUKTUR (UX)</h2>
+        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <div id="module1Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Data Kurikulum akan diisi secara dinamis menggunakan JS -->
+        </div>
+
+        <!-- Modul 2 -->
+        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 2: KERANGKA & TATA LETAK</h2>
+        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <div id="module2Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+
+        <!-- Modul 3 -->
+        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 3: VISUAL & ESTETIKA</h2>
+        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <div id="module3Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+
+        <!-- Modul 4 -->
+        <h2 class="text-2xl font-bold text-gray-800 border-b-2 border-indigo-400 pb-2 mb-6 mt-8">MODUL 4: INTERAKSI & PENGUJIAN</h2>
+        <!-- Ditambahkan ID unik untuk seleksi yang aman di JS -->
+        <div id="module4Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        </div>
+    </div>
+
+    <!-- Modal Box untuk Detail Pertemuan -->
+    <div id="detailModal" class="fixed inset-0 bg-gray-900 bg-opacity-75 hidden items-center justify-center p-4 z-50">
+        <div class="bg-white rounded-xl shadow-2xl w-full max-w-lg p-6 sm:p-8">
+            <h3 id="modalTitle" class="text-2xl font-bold text-gray-900 mb-4 border-b pb-2"></h3>
+            <p class="text-sm font-semibold text-indigo-600 mb-2">Detail Praktik (90 Menit):</p>
+            <p id="modalDetail" class="text-gray-700 mb-4"></p>
+            <p class="text-sm font-semibold text-indigo-600 mb-2">Integrasi Teori Singkat (Analog):</p>
+            <p id="modalTheory" class="text-gray-700 mb-4"></p>
+            <p class="text-sm font-semibold text-indigo-600 mb-2">Tools & Link Praktik:</p>
+            <p id="modalTools" class="text-gray-700 mb-6"></p>
+
+            <button onclick="closeModal()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md">Tutup</button>
+        </div>
+    </div>
+
+    <script>
+        // Array Data Kurikulum
+        const curriculum = [
+            // Modul 1
+            { id: 1, modul: 1, title: 'Analisis Kebutuhan', focus: 'Analisis Masalah Nyata & Pengguna', detail: 'Wawancara Cepat (45m): Wawancara berpasangan, mencari 3 masalah. Perumusan Masalah (45m): Pilih 1 masalah & definisikan Pengguna (Persona dasar).', theory: 'Desain = Memecahkan Masalah.', tools: 'Kertas, Post-it, Spidol.', active: true },
+            { id: 2, modul: 1, title: 'Ideasi & Persona', focus: 'Brainstorming Solusi & Persona Detil', detail: 'Crazy 8s (45m): Sketsa 8 ide kasar di kertas. Persona Lengkap (45m): Membuat 1-2 persona (termasuk kebutuhan mobile vs. desktop).', theory: 'Konsep Needs vs Wants.', tools: 'Kertas, Template Persona.', active: false },
+            { id: 3, modul: 1, title: 'Pemetaan Alur', focus: 'User Flow Mobile dan Website', detail: 'Menentukan 3 Tugas Kunci (20m). Menggambar Flowchart (70m): Gambar kotak-panah untuk alur mobile dan desktop (membandingkan perbedaannya).', theory: 'Alur Aplikasi = Peta Jalan.', tools: 'Lucidchart/Miro (Trial) atau Kertas.', active: false },
+            // Modul 2
+            { id: 4, modul: 2, title: 'Wireframe Lo-Fi', focus: 'Sketsa Wireframe Kertas (Lo-Fi)', detail: 'Sketsa Halaman (90m): Menggambar 5 halaman (misal: Home, Detail, Profil) di kertas. Fokus pada letak komponen di kedua format.', theory: 'Wireframe = Tulang Rangka (Fokus Letak, Bukan Warna).', tools: 'Kertas, Pensil, Template Smartphone & Monitor.', active: false },
+            { id: 5, modul: 2, title: 'Figma Setup', focus: 'Pengenalan Figma & Digitalisasi Wireframe', detail: 'Setup Figma (20m): Membuat frame Mobile & Desktop. Digitalisasi (70m): Mengubah 5 sketsa kertas menjadi kotak abu-abu/hitam di Figma.', theory: 'Figma = Studio Desain Digital.', tools: 'Figma (https://www.figma.com/education/)', active: false },
+            { id: 6, modul: 2, title: 'Layout Responsif', focus: 'Tata Letak (Layout) & Navigasi Responsif', detail: 'Layout & Grid (40m): Menggunakan Grid dasar Figma. Navigasi Bar (50m): Mendesain Tab Bar (Mobile) vs. Header Menu (Desktop) dan konsistensinya.', theory: 'Layout = Keteraturan. Responsive = Berubah Sesuai Ukuran Layar.', tools: 'Figma (Fitur Constraints Dasar).', active: false },
+            // Modul 3
+            { id: 7, modul: 3, title: 'Warna & Kontras', focus: 'Palet Warna & Penerapan Kontras', detail: 'Pemilihan Palet (30m): Pilih 3 warna utama (Primer, Sekunder, Netral). Uji Kontras (60m): Terapkan warna ke tombol/latar belakang. Uji perpaduan warna teks/latar di Mobile dan Desktop.', theory: 'Psikologi Warna & Kontras = Keterbacaan.', tools: 'Figma, Coolors (https://coolors.co)', active: false },
+            { id: 8, modul: 3, title: 'Tipografi', focus: 'Hirarki Teks & Pemilihan Font', detail: 'Memilih Font (30m): Pilih 2 font (Display & Body). Terapkan Hirarki (60m): Mengatur Style teks (H1, H2, Body) untuk Mobile (ukuran lebih kecil) dan Desktop (ukuran lebih besar).', theory: 'Tipografi = Kualitas Pesan.', tools: 'Figma (Google Fonts), Type Scale (https://typescale.com/)', active: false },
+            { id: 9, modul: 3, title: 'Desain Komponen', focus: 'Komponen UI Interaktif', detail: 'Membuat Komponen (90m): Desain Tombol (Normal, Hover/Saat Diklik), Input Field, dan Card. Gunakan fitur Component di Figma untuk efisiensi di Mobile & Desktop.', theory: 'Component = Barang yang Bisa Dipakai Berulang.', tools: 'Figma (Fitur Component).', active: false },
+            // Modul 4
+            { id: 10, modul: 4, title: 'Ikon & Finalisasi', focus: 'Membuat Ikon & Konsolidasi Desain', detail: 'Ikonografi (45m): Menggunakan library ikon gratis dan menerapkannya di Nav Bar dan tombol. Finalisasi (45m): Cek konsistensi warna, font, dan komponen di semua 5 halaman mobile & desktop.', theory: 'Ikon = Simbol yang Dipahami Universal.', tools: 'Figma, Material Symbols (https://fonts.google.com/icons)', active: false },
+            { id: 11, modul: 4, title: 'Prototipe & Uji Coba', focus: 'Prototipe Interaktif & Usability Testing', detail: 'Menghubungkan Alur (45m): Gunakan Figma Prototype Tool untuk menghubungkan tombol di Mobile & Desktop. Tes Berpasangan (45m): Saling menguji prototipe (observer & tester), mencatat 3 Titik Bingung.', theory: 'Prototipe = Simulasi Aplikasi. Kesalahan = Peluang Perbaikan.', tools: 'Figma Prototype Tool, Lembar Observasi (Kertas).', active: false },
+            { id: 12, modul: 4, title: 'Iterasi & Presentasi', focus: 'Re-Design & Presentasi Akhir', detail: 'Analisis Feedback & Iterasi (50m): Memperbaiki 3 masalah terbesar di desain Mobile & Desktop. Presentasi Proyek (40m): Sampaikan Masalah, Solusi, Hasil Uji Coba, dan Perbaikan Akhir (Iterasi) yang dilakukan.', theory: 'Iterasi = Proses Perbaikan Berulang. Storytelling Desain.', tools: 'Figma, Laptop/Proyektor.', active: false }
+        ];
+
+        // Fungsi untuk membuat elemen kartu (card)
+        function createCard(item) {
+            const isActive = item.active;
+            const card = document.createElement('div');
+            // Menambahkan kelas card-content-wrapper untuk layout flex
+            card.className = `p-6 rounded-xl shadow-lg transition duration-300 transform hover:shadow-xl ${isActive ? 'bg-white border-4 border-indigo-500' : 'bg-gray-100 opacity-70 cursor-not-allowed'} card-content-wrapper`;
+
+            // Nomor Pertemuan
+            const number = document.createElement('div');
+            number.className = `text-sm font-semibold mb-2 ${isActive ? 'text-indigo-600' : 'text-gray-400'}`;
+            number.textContent = `Pertemuan ${item.id} - ${isActive ? 'AKTIF' : 'TERKUNCI'}`;
+
+            // Judul Pertemuan
+            const title = document.createElement('h3');
+            title.className = `text-xl font-bold mb-3 ${isActive ? 'text-gray-900' : 'text-gray-500'}`;
+            title.textContent = item.title;
+
+            // Fokus Praktik
+            const focus = document.createElement('p');
+            focus.className = 'text-sm mb-4 line-clamp-2 text-gray-600 h-10';
+            focus.textContent = item.focus;
+
+            // Kontainer untuk Tombol/Link
+            const buttonWrapper = document.createElement('div');
+            buttonWrapper.className = 'mt-4'; // Margin top untuk memisahkan dari fokus teks
+
+            if (isActive) {
+                // 1. Link Utama (Mulai Praktik) - Tautan ke halaman baru
+                const startLink = document.createElement('a');
+                startLink.href = `/pertemuan${item.id}`; // Contoh: /pertemuan1
+                startLink.textContent = 'Mulai Praktik';
+                startLink.className = 'w-full block text-center font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md focus:outline-none focus:ring-4 bg-indigo-600 hover:bg-indigo-700 text-white focus:ring-indigo-300';
+                buttonWrapper.appendChild(startLink);
+
+                // 2. Tombol Sekunder (Lihat Detail Tugas) - Membuka modal
+                const detailButton = document.createElement('button');
+                detailButton.textContent = 'Lihat Detail Tugas';
+                detailButton.className = 'mt-2 w-full text-sm text-indigo-500 hover:text-indigo-700 font-medium transition duration-200';
+                detailButton.onclick = () => showModal(item);
+                buttonWrapper.appendChild(detailButton);
+                
+            } else {
+                // Tombol Non-aktif
+                const button = document.createElement('button');
+                button.textContent = 'Tersedia Setelah P' + (item.id - 1);
+                button.className = 'w-full font-semibold py-3 px-4 rounded-lg transition duration-200 shadow-md focus:outline-none bg-gray-300 text-gray-500 cursor-not-allowed';
+                button.disabled = true;
+                buttonWrapper.appendChild(button);
+            }
+
+            // Menambahkan elemen ke kartu
+            card.appendChild(number);
+            card.appendChild(title);
+            card.appendChild(focus);
+            card.appendChild(buttonWrapper);
+
+            return card;
+        }
+
+        // Fungsi untuk menampilkan modal
+        function showModal(item) {
+            document.getElementById('modalTitle').textContent = `Pertemuan ${item.id}: ${item.title}`;
+            document.getElementById('modalDetail').textContent = item.detail;
+            document.getElementById('modalTheory').textContent = item.theory;
+
+            // Mengganti koma dengan badge/pill untuk tampilan Tools
+            const toolsHtml = item.tools.split(',').map(tool => `<span class="inline-block bg-gray-100 text-gray-700 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-full">${tool.trim()}</span>`).join('');
+            document.getElementById('modalTools').innerHTML = toolsHtml;
+
+            document.getElementById('detailModal').classList.remove('hidden');
+            document.getElementById('detailModal').classList.add('flex');
+        }
+
+        // Fungsi untuk menutup modal
+        function closeModal() {
+            document.getElementById('detailModal').classList.remove('flex');
+            document.getElementById('detailModal').classList.add('hidden');
+        }
+
+        // Fungsi untuk inisialisasi dan render kartu
+        function initializeCurriculum() {
+            // Menggunakan ID yang spesifik dan valid untuk menargetkan setiap kontainer modul.
+            const moduleContainers = {
+                1: document.getElementById('module1Grid'),
+                2: document.getElementById('module2Grid'),
+                3: document.getElementById('module3Grid'),
+                4: document.getElementById('module4Grid')
+            };
+
+            curriculum.forEach(item => {
+                const cardElement = createCard(item);
+                // Pastikan kontainer ditemukan sebelum menambahkan elemen
+                if (moduleContainers[item.modul]) {
+                    moduleContainers[item.modul].appendChild(cardElement);
+                }
+            });
+        }
+
+        window.onload = initializeCurriculum;
+    </script>
+</body>
+</html>
