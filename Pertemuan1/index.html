@@ -82,15 +82,25 @@
 
     <main class="max-w-4xl mx-auto">
         
+        <!-- Language Toggle -->
+        <div class="flex justify-end mb-4">
+            <button onclick="setLanguage('id')" id="lang-id" class="px-3 py-1 text-sm font-semibold rounded-l-lg bg-orange-200 text-orange-800 transition duration-150 border-r border-orange-300">
+                🇮🇩 ID
+            </button>
+            <button onclick="setLanguage('en')" id="lang-en" class="px-3 py-1 text-sm font-semibold rounded-r-lg bg-gray-200 text-gray-800 transition duration-150">
+                🇬🇧 EN
+            </button>
+        </div>
+
         <!-- Header & Title -->
         <header class="text-center mb-6 container-card rounded-xl overflow-hidden">
             <div class="header-bg p-5">
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-white">
+                <h1 class="text-3xl sm:text-4xl font-extrabold text-white" data-translate="title">
                     MODUL 1: JADI DETEKTIF PERANCANG! 🕵️‍♀️
                 </h1>
             </div>
             <div class="p-5">
-                <p class="text-xl text-hero font-semibold">
+                <p class="text-xl text-hero font-semibold" data-translate="subtitle">
                     Tugas Kita: Cari Tahu Kenapa Temanmu Sedih dan Bagaimana Membantunya.
                 </p>
             </div>
@@ -98,34 +108,34 @@
 
         <!-- MATERI BARU: MOTIVASI DETEKTIF PERANCANG -->
         <section class="p-6 rounded-xl mb-10 intro-motivation">
-            <h2 class="text-2xl font-bold text-teal-700 mb-4 flex items-center border-b border-teal-400 pb-2">
+            <h2 class="text-2xl font-bold text-teal-700 mb-4 flex items-center border-b border-teal-400 pb-2" data-translate="why_title">
                 <span class="text-3xl mr-2">🌟</span>
                 MENGAPA KITA HARUS MENJADI DETEKTIF PERANCANG?
             </h2>
             <div class="space-y-4 text-gray-700">
-                <p>
+                <p data-translate="why_intro_1">
                     Bayangkan kamu adalah astronot yang menjelajahi **Tata Surya**! Untuk menyelesaikan misi, kamu harus tahu betul setiap planet:
                 </p>
                 
                 <ul class="list-disc list-inside ml-4 space-y-2">
-                    <li>
+                    <li data-translate="why_mercury_desc">
                         **Merkurius (Si Cepat):** Kamu harus tahu Merkurius itu sangat panas. Solusinya, kamu butuh baju ruang angkasa yang super dingin.
                     </li>
-                    <li>
+                    <li data-translate="why_neptune_desc">
                         **Neptunus (Si Dingin):** Kamu harus tahu Neptunus itu sangat dingin dan gelap. Solusinya, kamu butuh pemanas yang kuat dan senter raksasa.
                     </li>
-                    <li>
+                    <li data-translate="why_earth_desc">
                         **Bumi (Rumah Kita):** Kamu harus tahu kebutuhan di Bumi (seperti air dan udara) agar kamu bisa membuatnya nyaman untuk semua orang.
                     </li>
                 </ul>
 
-                <p class="font-semibold pt-2">
+                <p class="font-semibold pt-2" data-translate="why_detective_analogy">
                     Menjadi Detektif Perancang sama seperti menjadi astronot:
                 </p>
-                <p class="border-l-4 border-teal-500 pl-3 italic text-sm">
+                <p class="border-l-4 border-teal-500 pl-3 italic text-sm" data-translate="why_detective_lesson">
                     Kita tidak bisa membuat solusi yang baik **sebelum** kita benar-benar mengerti siapa pengguna kita (planet kita) dan apa masalah sesungguhnya (badai atau panas yang ekstrem).
                 </p>
-                <p class="font-bold text-teal-800">
+                <p class="font-bold text-teal-800" data-translate="why_detective_summary">
                     Tujuan kita di Modul ini adalah melakukan **Eksplorasi Masalah** (seperti eksplorasi Tata Surya) untuk menemukan **Akar Masalah** yang tersembunyi!
                 </p>
             </div>
@@ -133,7 +143,7 @@
         
         <!-- Teori Sederhana (Kotak Rahasia Detektif) -->
         <section class="p-6 rounded-xl mb-10 theory-box">
-            <h2 class="text-2xl font-bold text-primary mb-4 flex items-center">
+            <h2 class="text-2xl font-bold text-primary mb-4 flex items-center" data-translate="secret_box_title">
                 <span class="text-3xl mr-2">📚</span>
                 Kotak Rahasia Detektif (Aturan Main Merancang)
             </h2>
@@ -141,64 +151,64 @@
                 
                 <!-- Peta Harta Karun Berbentuk Berlian (DISCOVER/DEFINE/DEVELOP/DELIVER) -->
                 <div>
-                    <h4 class="font-bold text-lg text-teal-600 flex items-center">
+                    <h4 class="font-bold text-lg text-teal-600 flex items-center" data-translate="secret_box_1_title">
                         <span class="text-2xl mr-2">💎</span> 
                         1. Peta Harta Karun Berbentuk Berlian
                     </h4>
-                    <p class="ml-4 border-l-2 border-teal-300 pl-3">
+                    <p class="ml-4 border-l-2 border-teal-300 pl-3" data-translate="secret_box_1_desc_1">
                         <span class="font-semibold">Berlian 1 (Cari Masalah):</span> Kita cari semua masalah yang ada, lalu kita fokus pada satu masalah yang paling penting.
                     </p>
-                    <p class="ml-4 border-l-2 border-teal-300 pl-3 mt-1">
+                    <p class="ml-4 border-l-2 border-teal-300 pl-3 mt-1" data-translate="secret_box_1_desc_2">
                         <span class="font-semibold">Berlian 2 (Cari Solusi):</span> Setelah tahu fokus masalahnya, kita mencari banyak ide untuk solusi. Terakhir, kita coba ide yang paling bagus.
                     </p>
                 </div>
 
                 <!-- Teknik "Kenapa?" Lima Kali (5 Whys) -->
                 <div>
-                    <h4 class="font-bold text-lg text-red-500 flex items-center">
+                    <h4 class="font-bold text-lg text-red-500 flex items-center" data-translate="secret_box_2_title">
                         <span class="text-2xl mr-2">🔍</span> 
                         2. Teknik "Kenapa?" Lima Kali
                     </h4>
-                    <p class="ml-4 border-l-2 border-red-300 pl-3">
+                    <p class="ml-4 border-l-2 border-red-300 pl-3" data-translate="secret_box_2_desc_1">
                         Tanya <span class="font-bold italic">"KENAPA?"</span> terus sampai lima kali. Ini seperti mengupas bawang, sampai kita tahu **akar masalahnya** yang sesungguhnya!
                     </p>
-                    <p class="text-sm italic ml-4 mt-1">
+                    <p class="text-sm italic ml-4 mt-1" data-translate="secret_box_2_desc_example">
                         Contoh: "Mainan rusak." KENAPA? "Jatuh." KENAPA? "Di tepi meja." KENAPA? "Meja penuh." KENAPA? "Tidak punya rak buku." (Akar Masalah: Tidak ada tempat penyimpanan.)
                     </p>
                 </div>
                 
                 <!-- Membuat "Teman Khayalan" (Persona) -->
                 <div>
-                    <h4 class="font-bold text-lg text-blue-600 flex items-center">
+                    <h4 class="font-bold text-lg text-blue-600 flex items-center" data-translate="secret_box_3_title">
                         <span class="text-2xl mr-2">🧍</span>
                         3. Membuat "Teman Khayalan"
                     </h4>
-                    <p class="ml-4 border-l-2 border-blue-300 pl-3">
+                    <p class="ml-4 border-l-2 border-blue-300 pl-3" data-translate="secret_box_3_desc_1">
                         Kita harus tahu siapa yang punya masalah. Buatlah profil lengkap "Teman Khayalan" ini (Nama, Umur, Tujuan, Masalah). Solusi yang baik selalu dibuat khusus untuk satu orang!
                     </p>
                 </div>
 
                 <!-- Teknik Empati -->
                 <div>
-                    <h4 class="font-bold text-lg text-purple-600 flex items-center">
+                    <h4 class="font-bold text-lg text-purple-600 flex items-center" data-translate="secret_box_4_title">
                         <span class="text-2xl mr-2">❤️</span>
                         4. Teknik Empati: Merasakan
                     </h4>
-                    <p class="ml-4 border-l-2 border-purple-300 pl-3">
+                    <p class="ml-4 border-l-2 border-purple-300 pl-3" data-translate="secret_box_4_desc_1">
                         Sebagai Detektif, kita harus bisa <span class="font-bold italic">merasakan</span> apa yang dirasakan oleh "Teman Khayalan" kita. Dengan memahami perasaan dan kesukaan mereka, kita bisa membuat solusi yang benar-benar membantu dan menyenangkan.
                     </p>
                 </div>
                 
                 <!-- Kalimat Ajaib: "Bagaimana Kita Dapat?" (HMW) -->
                 <div>
-                    <h4 class="font-bold text-lg text-pink-600 flex items-center">
+                    <h4 class="font-bold text-lg text-pink-600 flex items-center" data-translate="secret_box_5_title">
                         <span class="text-2xl mr-2">💡</span>
                         5. Kalimat Ajaib: "Bagaimana Kita Dapat (B.K.D.)?"
                     </h4>
-                    <p class="ml-4 border-l-2 border-pink-300 pl-3">
+                    <p class="ml-4 border-l-2 border-pink-300 pl-3" data-translate="secret_box_5_desc_1">
                         Setelah menemukan Akar Masalah, ubah masalah itu menjadi pertanyaan peluang. Pertanyaan ini disebut **Bagaimana Kita Dapat (B.K.D.)**?
                     </p>
-                    <p class="text-sm italic ml-4 mt-1">
+                    <p class="text-sm italic ml-4 mt-1" data-translate="secret_box_5_desc_example">
                         Contoh: Akar Masalah: "Tidak ada tempat penyimpanan." B.K.D.: "Bagaimana kita dapat menciptakan tempat penyimpanan yang mudah dijangkau Siti?"
                     </p>
                 </div>
@@ -207,7 +217,7 @@
 
         <!-- CONTOH KASUS PENYELESAIAN -->
         <section class="p-6 rounded-xl mb-10 example-case">
-            <h2 class="text-2xl font-bold text-purple-800 mb-4 flex items-center">
+            <h2 class="text-2xl font-bold text-purple-800 mb-4 flex items-center" data-translate="case_study_title">
                 <span class="text-3xl mr-2">🌟</span>
                 CONTOH KASUS NYATA DETEKTIF PERANCANG
             </h2>
@@ -215,53 +225,53 @@
                 
                 <!-- 1. Masalah Awal -->
                 <div>
-                    <h4 class="font-bold text-lg text-purple-600 flex items-center">
+                    <h4 class="font-bold text-lg text-purple-600 flex items-center" data-translate="case_study_1_title">
                         <span class="text-xl mr-2">🛑</span>
                         MASALAH AWAL
                     </h4>
-                    <p class="ml-2">Rudi (8 tahun) selalu kehilangan buku PR-nya. Dia sering menangis dan dimarahi guru.</p>
+                    <p class="ml-2" data-translate="case_study_1_desc">Rudi (8 tahun) selalu kehilangan buku PR-nya. Dia sering menangis dan dimarahi guru.</p>
                 </div>
 
                 <!-- 2. Analisis 5 Whys -->
                 <div>
-                    <h4 class="font-bold text-lg text-purple-600 flex items-center">
+                    <h4 class="font-bold text-lg text-purple-600 flex items-center" data-translate="case_study_2_title">
                         <span class="text-xl mr-2">🔍</span>
                         ANALISIS "KENAPA?" LIMA KALI
                     </h4>
                     <ol class="list-decimal list-inside ml-4 text-sm space-y-1">
-                        <li>**Rudi Kehilangan Buku PR.** KENAPA? → Karena buku itu tidak pernah berada di tempat yang sama.</li>
-                        <li>**Buku tidak di tempat yang sama.** KENAPA? → Karena Rudi sering terburu-buru dan meletakkannya di tempat acak (sofa, meja makan, bawah kasur).</li>
-                        <li>**Rudi terburu-buru dan acak.** KENAPA? → Karena dia mengerjakan PR di waktu yang berbeda-beda, dan tidak punya tas khusus untuk PR.</li>
-                        <li>**Tidak punya tas khusus PR.** KENAPA? → Karena dia menggunakan tas sekolah yang sama, dan tas itu selalu penuh dengan mainan dan barang lain.</li>
-                        <li>**Tas sekolah selalu penuh.** KENAPA? (AKAR MASALAH) → **Karena Rudi tidak memiliki sistem sederhana yang memberinya sinyal "Ini Khusus PR".**</li>
+                        <li data-translate="case_study_2_why1">**Rudi Kehilangan Buku PR.** KENAPA? → Karena buku itu tidak pernah berada di tempat yang sama.</li>
+                        <li data-translate="case_study_2_why2">**Buku tidak di tempat yang sama.** KENAPA? → Karena Rudi sering terburu-buru dan meletakkannya di tempat acak (sofa, meja makan, bawah kasur).</li>
+                        <li data-translate="case_study_2_why3">**Rudi terburu-buru dan acak.** KENAPA? → Karena dia mengerjakan PR di waktu yang berbeda-beda, dan tidak punya tas khusus untuk PR.</li>
+                        <li data-translate="case_study_2_why4">**Tidak punya tas khusus PR.** KENAPA? → Karena dia menggunakan tas sekolah yang sama, dan tas itu selalu penuh dengan mainan dan barang lain.</li>
+                        <li data-translate="case_study_2_why5">**Tas sekolah selalu penuh.** KENAPA? (AKAR MASALAH) → **Karena Rudi tidak memiliki sistem sederhana yang memberinya sinyal "Ini Khusus PR".**</li>
                     </ol>
                 </div>
 
                 <!-- 3. Persona Rudi -->
                 <div>
-                    <h4 class="font-bold text-lg text-purple-600 flex items-center">
+                    <h4 class="font-bold text-lg text-purple-600 flex items-center" data-translate="case_study_3_title">
                         <span class="text-xl mr-2">🧍</span>
                         TEMAN KHAYALAN (RUDI)
                     </h4>
                     <ul class="list-disc list-inside ml-4 text-sm space-y-1">
-                        <li>**Tujuan:** Ingin cepat selesai PR agar bisa langsung main bola.</li>
-                        <li>**Kesukaan:** Warna kuning, karakter pahlawan super, stiker.</li>
-                        <li>**Kekesalan:** Harus mencari barang yang hilang, menunggu, dan membaca banyak tulisan.</li>
+                        <li data-translate="case_study_3_goal">**Tujuan:** Ingin cepat selesai PR agar bisa langsung main bola.</li>
+                        <li data-translate="case_study_3_likes">**Kesukaan:** Warna kuning, karakter pahlawan super, stiker.</li>
+                        <li data-translate="case_study_3_frustration">**Kekesalan:** Harus mencari barang yang hilang, menunggu, dan membaca banyak tulisan.</li>
                     </ul>
                 </div>
 
                 <!-- 4. Pertanyaan Peluang (HMW) -->
                 <div>
-                    <h4 class="font-bold text-lg text-purple-600 flex items-center">
+                    <h4 class="font-bold text-lg text-purple-600 flex items-center" data-translate="case_study_4_title">
                         <span class="text-xl mr-2">💡</span>
                         PERNYATAAN B.K.D. (Siap Merancang)
                     </h4>
-                    <p class="ml-2 font-bold italic p-2 bg-purple-100 rounded-md">
+                    <p class="ml-2 font-bold italic p-2 bg-purple-100 rounded-md" data-translate="case_study_4_desc">
                         "Bagaimana kita dapat menciptakan **sistem visual yang cepat dan menarik perhatian Rudi** (karena dia suka pahlawan super dan warna kuning) agar dia selalu tahu **di mana tempat menyimpan buku PR-nya**?"
                     </p>
                 </div>
 
-                <p class="text-sm italic pt-3 border-t">
+                <p class="text-sm italic pt-3 border-t" data-translate="case_study_solution">
                     <span class="font-bold">Solusi yang mungkin dibuat:</span> Membuat "Kotak Tugas Pahlawan" berwarna kuning dengan stiker pahlawan super, yang diletakkan persis di sebelah meja belajarnya. Kotak ini memberikan sinyal yang jelas bahwa "ini adalah rumah" untuk semua buku PR.
                 </p>
             </div>
@@ -269,30 +279,30 @@
 
         <!-- STEP 1: Kumpulkan Petunjuk -->
         <section id="step-1" class="container-card bg-white p-6 rounded-xl mb-8">
-            <h3 class="text-xl sm:text-2xl font-semibold section-title mb-4 flex items-center border-b pb-2">
+            <h3 class="text-xl sm:text-2xl font-semibold section-title mb-4 flex items-center border-b pb-2" data-translate="step_1_title">
                 <span class="step-icon w-10 h-10 flex items-center justify-center rounded-full mr-3 shadow-md">1</span>
                 Kumpulkan Petunjuk! (Tahap Menemukan)
             </h3>
-            <p class="text-gray-600 mb-4 italic">
+            <p class="text-gray-600 mb-4 italic" data-translate="step_1_inst">
                 Cari 3 masalah kecil dari teman-temanmu. Tulis di "Post-it" di bawah.
             </p>
 
             <div class="space-y-4">
                 <div>
-                    <label for="problem1" class="block text-sm font-medium text-gray-700">Masalah 1</label>
-                    <input type="text" id="problem1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Kunci rumah sering hilang">
+                    <label for="problem1" class="block text-sm font-medium text-gray-700" data-translate="problem_label_1">Masalah 1</label>
+                    <input type="text" id="problem1" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="problem_placeholder_1" placeholder="Contoh: Kunci rumah sering hilang">
                 </div>
                 <div>
-                    <label for="problem2" class="block text-sm font-medium text-gray-700">Masalah 2</label>
-                    <input type="text" id="problem2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Kotak pensil terlalu kecil">
+                    <label for="problem2" class="block text-sm font-medium text-gray-700" data-translate="problem_label_2">Masalah 2</label>
+                    <input type="text" id="problem2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="problem_placeholder_2" placeholder="Contoh: Kotak pensil terlalu kecil">
                 </div>
                 <div>
-                    <label for="problem3" class="block text-sm font-medium text-gray-700">Masalah 3</label>
-                    <input type="text" id="problem3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Bingung memilih baju untuk sekolah">
+                    <label for="problem3" class="block text-sm font-medium text-gray-700" data-translate="problem_label_3">Masalah 3</label>
+                    <input type="text" id="problem3" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="problem_placeholder_3" placeholder="Contoh: Bingung memilih baju untuk sekolah">
                 </div>
             </div>
             
-            <button onclick="saveProblems()" class="mt-6 w-full bg-red-500 text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition duration-150 shadow-md">
+            <button onclick="saveProblems()" class="mt-6 w-full bg-red-500 text-white py-2 rounded-lg font-semibold hover:bg-red-600 transition duration-150 shadow-md" data-translate="save_button_1">
                 Tulis Petunjuk di Post-it! 📝
             </button>
             <p id="save-status-1" class="mt-2 text-center text-sm italic font-medium"></p>
@@ -305,26 +315,26 @@
 
         <!-- STEP 2: Fokus dan Analisis Mendalam -->
         <section id="step-2" class="container-card bg-white p-6 rounded-xl mb-8">
-            <h3 class="text-xl sm:text-2xl font-semibold section-title mb-4 flex items-center border-b pb-2">
+            <h3 class="text-xl sm:text-2xl font-semibold section-title mb-4 flex items-center border-b pb-2" data-translate="step_2_title">
                 <span class="step-icon w-10 h-10 flex items-center justify-center rounded-full mr-3 shadow-md">2</span>
                 Fokus Pada Kasus Terbesar & Analisis "Kenapa?"
             </h3>
-            <p class="text-gray-600 mb-4 italic">
+            <p class="text-gray-600 mb-4 italic" data-translate="step_2_inst">
                 Pilih satu masalah, cari akar masalahnya, lalu rumuskan menjadi peluang (B.K.D.).
             </p>
 
             <div class="space-y-6">
                 <!-- Pemilihan Masalah -->
                 <div>
-                    <label for="selected-problem" class="block text-sm font-medium text-gray-700">Pilih 1 Masalah Utama:</label>
+                    <label for="selected-problem" class="block text-sm font-medium text-gray-700" data-translate="select_problem_label">Pilih 1 Masalah Utama:</label>
                     <select id="selected-problem" onchange="updateFocusDisplay()" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border">
-                        <option value="">-- Pilih Masalah dari Petunjuk di Atas --</option>
+                        <option value="" data-translate="select_problem_default">-- Pilih Masalah dari Petunjuk di Atas --</option>
                     </select>
                 </div>
 
                 <!-- Display for Selected Problem (Focus Card) -->
                 <div id="focus-problem-display" class="bg-teal-100 text-teal-700 p-4 rounded-lg border border-teal-300 mt-4 hidden">
-                    <p class="font-bold mb-1 flex items-center">
+                    <p class="font-bold mb-1 flex items-center" data-translate="current_focus_title">
                         <span class="text-xl mr-2">🎯</span>
                         Kasus Yang Akan Kita Selesaikan:
                     </p>
@@ -332,71 +342,71 @@
                 </div>
 
                 <!-- 5 WHYS SECTION -->
-                <h4 class="text-lg font-bold text-gray-800 pt-2 border-t mt-4">Jalankan Teknik "Kenapa?" Lima Kali</h4>
-                <p class="text-sm text-gray-500 mb-3">Tanyakan "Kenapa?" pada Masalah Utama, lalu lanjutkan pada jawaban sebelumnya, sampai kamu menemukan Akar Masalah (Jawaban ke-5).</p>
+                <h4 class="text-lg font-bold text-gray-800 pt-2 border-t mt-4" data-translate="whys_section_title">Jalankan Teknik "Kenapa?" Lima Kali</h4>
+                <p class="text-sm text-gray-500 mb-3" data-translate="whys_section_inst">Tanyakan "Kenapa?" terus sampai lima kali. Ini seperti mengupas bawang, sampai kita tahu **akar masalahnya** yang sesungguhnya!</p>
                 
                 <div class="space-y-3 p-4 bg-gray-50 rounded-lg border">
                     <div class="why-container">
-                        <label class="why-label">1. KENAPA?</label>
-                        <input type="text" id="why1" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" placeholder="Jawaban 1 (Gejala Masalah)">
+                        <label class="why-label" data-translate="why_label">1. KENAPA?</label>
+                        <input type="text" id="why1" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" data-translate-placeholder="why_placeholder_1" placeholder="Jawaban 1 (Gejala Masalah)">
                     </div>
                     <div class="why-container">
-                        <label class="why-label">2. KENAPA?</label>
-                        <input type="text" id="why2" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" placeholder="Jawaban 2">
+                        <label class="why-label" data-translate="why_label">2. KENAPA?</label>
+                        <input type="text" id="why2" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" data-translate-placeholder="why_placeholder_2" placeholder="Jawaban 2">
                     </div>
                     <div class="why-container">
-                        <label class="why-label">3. KENAPA?</label>
-                        <input type="text" id="why3" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" placeholder="Jawaban 3">
+                        <label class="why-label" data-translate="why_label">3. KENAPA?</label>
+                        <input type="text" id="why3" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" data-translate-placeholder="why_placeholder_3" placeholder="Jawaban 3">
                     </div>
                     <div class="why-container">
-                        <label class="why-label">4. KENAPA?</label>
-                        <input type="text" id="why4" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" placeholder="Jawaban 4">
+                        <label class="why-label" data-translate="why_label">4. KENAPA?</label>
+                        <input type="text" id="why4" class="block w-full rounded-md border-gray-300 shadow-sm p-2 border" data-translate-placeholder="why_placeholder_4" placeholder="Jawaban 4">
                     </div>
                     <div class="why-container">
-                        <label class="why-label font-bold text-red-600">5. KENAPA? (AKAR MASALAH)</label>
-                        <input type="text" id="why5" class="block w-full rounded-md border-red-500 shadow-sm p-2 border bg-red-50 font-bold" placeholder="Jawaban 5 (Akar Masalah Sesungguhnya)">
+                        <label class="why-label font-bold text-red-600" data-translate="why_label_root">5. KENAPA? (AKAR MASALAH)</label>
+                        <input type="text" id="why5" class="block w-full rounded-md border-red-500 shadow-sm p-2 border bg-red-50 font-bold" data-translate-placeholder="why_placeholder_root" placeholder="Jawaban 5 (Akar Masalah Sesungguhnya)">
                     </div>
                 </div>
 
                 <!-- HMW QUESTION -->
-                <h4 class="text-lg font-bold text-pink-600 pt-2 border-t mt-4">Ubah Menjadi Pertanyaan Peluang B.K.D.</h4>
-                <p class="text-sm text-gray-500 mb-3">Gunakan format "Bagaimana Kita Dapat..." agar siap mencari solusi di Modul 2.</p>
-                <input type="text" id="hmw-question" class="block w-full rounded-md border-pink-500 shadow-sm p-3 border bg-pink-50 font-medium" placeholder="Contoh: Bagaimana kita dapat menciptakan tempat penyimpanan yang mudah dijangkau Siti?">
+                <h4 class="text-lg font-bold text-pink-600 pt-2 border-t mt-4" data-translate="hmw_section_title">Ubah Menjadi Pertanyaan Peluang B.K.D.</h4>
+                <p class="text-sm text-gray-500 mb-3" data-translate="hmw_section_inst">Gunakan format "Bagaimana Kita Dapat..." agar siap mencari solusi di Modul 2.</p>
+                <input type="text" id="hmw-question" class="block w-full rounded-md border-pink-500 shadow-sm p-3 border bg-pink-50 font-medium" data-translate-placeholder="hmw_placeholder" placeholder="Contoh: Bagaimana kita dapat menciptakan tempat penyimpanan yang mudah dijangkau Siti?">
 
                 <!-- DEFINISI TEMAN KHAYALAN LENGKAP -->
-                <h4 class="text-lg font-bold text-gray-800 pt-2 border-t mt-4">Buat Teman Khayalan (Lengkap)</h4>
+                <h4 class="text-lg font-bold text-gray-800 pt-2 border-t mt-4" data-translate="persona_section_title">Buat Teman Khayalan (Lengkap)</h4>
                 
                 <div class="grid sm:grid-cols-2 gap-4">
                     <div>
-                        <label for="persona-name" class="block text-sm font-medium text-gray-700">Nama Teman Khayalan:</label>
-                        <input type="text" id="persona-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Siti Si Pelupa">
+                        <label for="persona-name" class="block text-sm font-medium text-gray-700" data-translate="persona_label_name">Nama Teman Khayalan:</label>
+                        <input type="text" id="persona-name" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="persona_placeholder_name" placeholder="Contoh: Siti Si Pelupa">
                     </div>
                     <div>
-                        <label for="persona-age" class="block text-sm font-medium text-gray-700">Umur:</label>
-                        <input type="number" id="persona-age" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: 8">
+                        <label for="persona-age" class="block text-sm font-medium text-gray-700" data-translate="persona_label_age">Umur:</label>
+                        <input type="number" id="persona-age" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="persona_placeholder_age" placeholder="Contoh: 8">
                     </div>
                     <div>
-                        <label for="persona-goal" class="block text-sm font-medium text-gray-700">Tujuan (Apa yang Dia Mau):</label>
-                        <input type="text" id="persona-goal" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Ingin selalu tepat waktu">
+                        <label for="persona-goal" class="block text-sm font-medium text-gray-700" data-translate="persona_label_goal">Tujuan (Apa yang Dia Mau):</label>
+                        <input type="text" id="persona-goal" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="persona_placeholder_goal" placeholder="Contoh: Ingin selalu tepat waktu">
                     </div>
                     <div>
-                        <label for="persona-frustration" class="block text-sm font-medium text-gray-700">Kekesalan Utama (Apa yang Membuatnya Kesal):</label>
-                        <input type="text" id="persona-frustration" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Dia kesal karena selalu dimarahi guru karena terlambat">
+                        <label for="persona-frustration" class="block text-sm font-medium text-gray-700" data-translate="persona_label_frustration">Kekesalan Utama (Apa yang Membuatnya Kesal):</label>
+                        <input type="text" id="persona-frustration" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="persona_placeholder_frustration" placeholder="Contoh: Dia kesal karena selalu dimarahi guru karena terlambat">
                     </div>
                 </div>
                 <div class="space-y-4">
                     <div>
-                        <label for="persona-likes" class="block text-sm font-medium text-gray-700">Kesukaan (Hobi/Hal yang Disukai):</label>
-                        <textarea id="persona-likes" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Suka bermain boneka, menggambar, dan membaca komik"></textarea>
+                        <label for="persona-likes" class="block text-sm font-medium text-gray-700" data-translate="persona_label_likes">Kesukaan (Hobi/Hal yang Disukai):</label>
+                        <textarea id="persona-likes" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="persona_placeholder_likes" placeholder="Contoh: Suka bermain boneka, menggambar, dan membaca komik"></textarea>
                     </div>
                     <div>
-                        <label for="persona-dislikes" class="block text-sm font-medium text-gray-700">Ketidaksukaan (Hal yang Tidak Disukai):</label>
-                        <textarea id="persona-dislikes" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" placeholder="Contoh: Tidak suka menunggu lama, tempat yang berantakan, dan bunyi keras"></textarea>
+                        <label for="persona-dislikes" class="block text-sm font-medium text-gray-700" data-translate="persona_label_dislikes">Ketidaksukaan (Hal yang Tidak Disukai):</label>
+                        <textarea id="persona-dislikes" rows="2" class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-red-500 focus:ring-red-500 p-2 border" data-translate-placeholder="persona_placeholder_dislikes" placeholder="Contoh: Tidak suka menunggu lama, tempat yang berantakan, dan bunyi keras"></textarea>
                     </div>
                 </div>
             </div>
 
-            <button onclick="definePersona()" class="mt-6 w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition duration-150 shadow-md">
+            <button onclick="definePersona()" class="mt-6 w-full bg-orange-500 text-white py-2 rounded-lg font-semibold hover:bg-orange-600 transition duration-150 shadow-md" data-translate="save_button_2">
                 Selesaikan Analisis Detektif! 🔎
             </button>
             <p id="save-status-2" class="mt-3 text-center text-sm italic font-medium"></p>
@@ -404,85 +414,85 @@
 
         <!-- STEP 3: Rekap Hasil Analisis LENGKAP -->
         <section id="step-3" class="container-card bg-white p-6 rounded-xl mb-8">
-            <h3 class="text-xl sm:text-2xl font-semibold section-title mb-4 flex items-center border-b pb-2">
+            <h3 class="text-xl sm:text-2xl font-semibold section-title mb-4 flex items-center border-b pb-2" data-translate="step_3_title">
                 <span class="step-icon w-10 h-10 flex items-center justify-center rounded-full mr-3 shadow-md">3</span>
                 Laporan Akhir Detektif (Siap Dirancang)
             </h3>
-            <p class="text-gray-600 mb-4">
+            <p class="text-gray-600 mb-4" data-translate="step_3_inst">
                 Ini adalah ringkasan hasil analisis mendalam kita.
             </p>
 
             <div id="recap-content" class="theory-box p-6 rounded-lg space-y-4">
                 
-                <h4 class="text-xl font-bold text-primary mb-3 flex items-center"><span class="text-2xl mr-2">🎯</span> Masalah Utama Kita:</h4>
+                <h4 class="text-xl font-bold text-primary mb-3 flex items-center" data-translate="recap_problem_title"><span class="text-2xl mr-2">🎯</span> Masalah Utama Kita:</h4>
                 <p id="recap-problem" class="text-base italic text-gray-700 font-medium p-2 bg-white rounded-md shadow-inner">-- Belum ada masalah yang dipilih --</p>
 
-                <h4 class="text-xl font-bold text-red-600 mt-5 mb-3 flex items-center"><span class="text-2xl mr-2">🌿</span> AKAR MASALAH SESUNGGUHNYA:</h4>
+                <h4 class="text-xl font-bold text-red-600 mt-5 mb-3 flex items-center" data-translate="recap_root_cause_title"><span class="text-2xl mr-2">🌿</span> AKAR MASALAH SESUNGGUHNYA:</h4>
                 <p id="recap-root-cause" class="text-lg font-extrabold text-red-800 p-3 bg-red-100 rounded-md border-2 border-red-400">-- Belum dianalisis (Jawaban ke-5 dari Teknik 'Kenapa?') --</p>
 
                 <!-- HMW Recap -->
-                <h4 class="text-xl font-bold text-pink-600 mt-5 mb-3 flex items-center"><span class="text-2xl mr-2">💡</span> PERTANYAAN PELUANG (B.K.D.):</h4>
+                <h4 class="text-xl font-bold text-pink-600 mt-5 mb-3 flex items-center" data-translate="recap_hmw_title"><span class="text-2xl mr-2">💡</span> PERTANYAAN PELUANG (B.K.D.):</h4>
                 <p id="recap-hmw" class="text-lg font-extrabold text-pink-800 p-3 bg-pink-100 rounded-md border-2 border-pink-400">-- Belum dirumuskan --</p>
                 
-                <h4 class="text-xl font-bold text-primary mt-5 mb-3 flex items-center"><span class="text-2xl mr-2">🧍</span> Teman Khayalan (Lengkap) Kita:</h4>
+                <h4 class="text-xl font-bold text-primary mt-5 mb-3 flex items-center" data-translate="recap_persona_title"><span class="text-2xl mr-2">🧍</span> Teman Khayalan (Lengkap) Kita:</h4>
                 <div id="recap-persona" class="space-y-3 p-3 border border-dashed rounded-md border-blue-400">
-                    <p><span class="font-semibold text-gray-800">Nama & Umur:</span> <span id="recap-p-name" class="text-gray-600">--</span> (<span id="recap-p-age" class="text-gray-600">--</span> tahun)</p>
-                    <p><span class="font-semibold text-gray-800">Tujuan Utama:</span> <span id="recap-p-goal" class="text-gray-600">--</span></p>
-                    <p><span class="font-semibold text-gray-800">Kekesalan:</span> <span id="recap-p-frustration" class="text-gray-600">--</span></p>
-                    <p><span class="font-semibold text-gray-800">Suka/Hobi:</span> <span id="recap-p-likes" class="text-gray-600">--</span></p>
-                    <p><span class="font-semibold text-gray-800">Tidak Suka:</span> <span id="recap-p-dislikes" class="text-gray-600">--</span></p>
+                    <p><span class="font-semibold text-gray-800" data-translate="recap_persona_name_age">Nama & Umur:</span> <span id="recap-p-name" class="text-gray-600">--</span> (<span id="recap-p-age" class="text-gray-600">--</span> <span data-translate="recap_years">tahun</span>)</p>
+                    <p><span class="font-semibold text-gray-800" data-translate="recap_persona_goal">Tujuan Utama:</span> <span id="recap-p-goal" class="text-gray-600">--</span></p>
+                    <p><span class="font-semibold text-gray-800" data-translate="recap_persona_frustration">Kekesalan:</span> <span id="recap-p-frustration" class="text-gray-600">--</span></p>
+                    <p><span class="font-semibold text-gray-800" data-translate="recap_persona_likes">Suka/Hobi:</span> <span id="recap-p-likes" class="text-gray-600">--</span></p>
+                    <p><span class="font-semibold text-gray-800" data-translate="recap_persona_dislikes">Tidak Suka:</span> <span id="recap-p-dislikes" class="text-gray-600">--</span></p>
                 </div>
             </div>
             
-            <p class="text-xl text-center mt-6 text-hero font-bold">
+            <p class="text-xl text-center mt-6 text-hero font-bold" data-translate="recap_finished_message">
                 🎉 Kasus Selesai! Kita tahu siapa yang dibantu dan masalah apa yang harus diselesaikan. Mari ke Modul 2 untuk mencari IDE Solusi!
             </p>
         </section>
         
         <!-- KAMUS RAHASIA DETEKTIF (Istilah Asing) -->
         <section class="p-6 rounded-xl dictionary mb-8">
-            <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center">
+            <h2 class="text-2xl font-bold text-blue-800 mb-4 flex items-center" data-translate="dictionary_title">
                 <span class="text-3xl mr-2">📖</span>
                 KAMUS RAHASIA DETEKTIF
             </h2>
             <div class="space-y-3 text-gray-700 text-sm">
-                <div>
+                <div data-translate="dict_double_diamond">
                     <p class="font-bold text-blue-600">DOUBLE DIAMOND (Berlian Ganda)</p>
                     <p class="ml-2">Cara kerja desainer profesional. Ini adalah nama resmi dari "Peta Harta Karun Berbentuk Berlian" yang kita gunakan. 
                         <a href="https://www.designcouncil.org.uk/our-work/skills-learning/framework-for-innovation/" target="_blank" class="text-xs text-blue-500 hover:text-blue-700 font-semibold">(Sumber: Design Council)</a>
                     </p>
                 </div>
-                <div>
+                <div data-translate="dict_5_whys">
                     <p class="font-bold text-blue-600">THE 5 WHYS (Kenapa Lima Kali)</p>
                     <p class="ml-2">Nama resmi dari teknik bertanya "Kenapa?" sampai 5 kali untuk menemukan akar masalah. Biasanya dipakai di dunia bisnis.
                         <a href="https://www.isixsigma.com/tools-templates/cause-effect/determine-root-cause-5-whys/" target="_blank" class="text-xs text-blue-500 hover:text-blue-700 font-semibold">(Sumber: ASQ/iSixSigma)</a>
                     </p>
                 </div>
-                <div>
+                <div data-translate="dict_persona">
                     <p class="font-bold text-blue-600">PERSONA</p>
                     <p class="ml-2">Nama resmi dari "Teman Khayalan" yang kita buat. Persona adalah profil detail yang mewakili pengguna (pemilik masalah) yang sebenarnya.
                         <a href="https://www.nngroup.com/articles/persona/" target="_blank" class="text-xs text-blue-500 hover:text-blue-700 font-semibold">(Sumber: Nielsen Norman Group)</a>
                     </p>
                 </div>
-                <div>
+                <div data-translate="dict_hmw">
                     <p class="font-bold text-blue-600">HMW (How Might We)</p>
                     <p class="ml-2">Pertanyaan "Bagaimana Kita Dapat...". Ini mengubah masalah (negatif) menjadi kesempatan mencari solusi (positif).
                         <a href="https://www.ideou.com/blogs/how-might-we-a-starter-guide-to-hmw-questions" target="_blank" class="text-xs text-blue-500 hover:text-blue-700 font-semibold">(Sumber: IDEO U)</a>
                     </p>
                 </div>
-                <div>
+                <div data-translate="dict_empathy">
                     <p class="font-bold text-blue-600">EMPATI (Empathy)</p>
                     <p class="ml-2">Kemampuan untuk merasakan apa yang dirasakan orang lain, yang sangat penting saat merancang solusi.
                         <a href="https://www.interaction-design.org/literature/topics/empathy" target="_blank" class="text-xs text-blue-500 hover:text-blue-700 font-semibold">(Sumber: Interaction Design Foundation)</a>
                     </p>
                 </div>
-                <div>
+                <div data-translate="dict_ux">
                     <p class="font-bold text-blue-600">UX (User Experience)</p>
                     <p class="ml-2">Singkatan untuk "Pengalaman Pengguna". Ini adalah perasaan atau pengalaman seseorang saat menggunakan produk atau solusi yang kita buat.
                         <a href="https://www.nngroup.com/articles/usability-101-introduction-to-usability/" target="_blank" class="text-xs text-blue-500 hover:text-blue-700 font-semibold">(Sumber: Nielsen Norman Group)</a>
                     </p>
                 </div>
-                <div>
+                <div data-translate="dict_4_stages">
                     <p class="font-bold text-blue-600">DISCOVER / DEFINE / DEVELOP / DELIVER</p>
                     <p class="ml-2">Ini adalah nama resmi dari 4 tahap di dalam Double Diamond: Menemukan, Menentukan Fokus, Mengembangkan, dan Mengirimkan.
                         <a href="https://www.designcouncil.org.uk/our-work/skills-learning/framework-for-innovation/" target="_blank" class="text-xs text-blue-500 hover:text-blue-700 font-semibold">(Sumber: Design Council)</a>
@@ -498,6 +508,304 @@
         let problems = [];
         let selectedProblem = "";
         let persona = {};
+        let currentLang = 'id'; // Default language
+
+        // --- Translation Data ---
+        const translations = {
+            'id': {
+                // Header
+                'title': 'MODUL 1: JADI DETEKTIF PERANCANG! 🕵️‍♀️',
+                'subtitle': 'Tugas Kita: Cari Tahu Kenapa Temanmu Sedih dan Bagaimana Membantunya.',
+                // Why Section
+                'why_title': 'MENGAPA KITA HARUS MENJADI DETEKTIF PERANCANG?',
+                'why_intro_1': 'Bayangkan kamu adalah astronot yang menjelajahi **Tata Surya**! Untuk menyelesaikan misi, kamu harus tahu betul setiap planet:',
+                'why_mercury_desc': '**Merkurius (Si Cepat):** Kamu harus tahu Merkurius itu sangat panas. Solusinya, kamu butuh baju ruang angkasa yang super dingin.',
+                'why_neptune_desc': '**Neptunus (Si Dingin):** Kamu harus tahu Neptunus itu sangat dingin dan gelap. Solusinya, kamu butuh pemanas yang kuat dan senter raksasa.',
+                'why_earth_desc': '**Bumi (Rumah Kita):** Kamu harus tahu kebutuhan di Bumi (seperti air dan udara) agar kamu bisa membuatnya nyaman untuk semua orang.',
+                'why_detective_analogy': 'Menjadi Detektif Perancang sama seperti menjadi astronot:',
+                'why_detective_lesson': 'Kita tidak bisa membuat solusi yang baik **sebelum** kita benar-benar mengerti siapa pengguna kita (planet kita) dan apa masalah sesungguhnya (badai atau panas yang ekstrem).',
+                'why_detective_summary': 'Tujuan kita di Modul ini adalah melakukan **Eksplorasi Masalah** (seperti eksplorasi Tata Surya) untuk menemukan **Akar Masalah** yang tersembunyi!',
+                // Secret Box
+                'secret_box_title': 'Kotak Rahasia Detektif (Aturan Main Merancang)',
+                'secret_box_1_title': '1. Peta Harta Karun Berbentuk Berlian',
+                'secret_box_1_desc_1': '<span class="font-semibold">Berlian 1 (Cari Masalah):</span> Kita cari semua masalah yang ada, lalu kita fokus pada satu masalah yang paling penting.',
+                'secret_box_1_desc_2': '<span class="font-semibold">Berlian 2 (Cari Solusi):</span> Setelah tahu fokus masalahnya, kita mencari banyak ide untuk solusi. Terakhir, kita coba ide yang paling bagus.',
+                'secret_box_2_title': '2. Teknik "Kenapa?" Lima Kali',
+                'secret_box_2_desc_1': 'Tanya <span class="font-bold italic">"KENAPA?"</span> terus sampai lima kali. Ini seperti mengupas bawang, sampai kita tahu **akar masalahnya** yang sesungguhnya!',
+                'secret_box_2_desc_example': 'Contoh: "Mainan rusak." KENAPA? "Jatuh." KENAPA? "Di tepi meja." KENAPA? "Meja penuh." KENAPA? "Tidak punya rak buku." (Akar Masalah: Tidak ada tempat penyimpanan.)',
+                'secret_box_3_title': '3. Membuat "Teman Khayalan"',
+                'secret_box_3_desc_1': 'Kita harus tahu siapa yang punya masalah. Buatlah profil lengkap "Teman Khayalan" ini (Nama, Umur, Tujuan, Masalah). Solusi yang baik selalu dibuat khusus untuk satu orang!',
+                'secret_box_4_title': '4. Teknik Empati: Merasakan',
+                'secret_box_4_desc_1': 'Sebagai Detektif, kita harus bisa <span class="font-bold italic">merasakan</span> apa yang dirasakan oleh "Teman Khayalan" kita. Dengan memahami perasaan dan kesukaan mereka, kita bisa membuat solusi yang benar-benar membantu dan menyenangkan.',
+                'secret_box_5_title': '5. Kalimat Ajaib: "Bagaimana Kita Dapat (B.K.D.)?"',
+                'secret_box_5_desc_1': 'Setelah menemukan Akar Masalah, ubah masalah itu menjadi pertanyaan peluang. Pertanyaan ini disebut **Bagaimana Kita Dapat (B.K.D.)**?',
+                'secret_box_5_desc_example': 'Contoh: Akar Masalah: "Tidak ada tempat penyimpanan." B.K.D.: "Bagaimana kita dapat menciptakan tempat penyimpanan yang mudah dijangkau Siti?"',
+                // Case Study
+                'case_study_title': 'CONTOH KASUS NYATA DETEKTIF PERANCANG',
+                'case_study_1_title': 'MASALAH AWAL',
+                'case_study_1_desc': 'Rudi (8 tahun) selalu kehilangan buku PR-nya. Dia sering menangis dan dimarahi guru.',
+                'case_study_2_title': 'ANALISIS "KENAPA?" LIMA KALI',
+                'case_study_2_why1': '**Rudi Kehilangan Buku PR.** KENAPA? → Karena buku itu tidak pernah berada di tempat yang sama.',
+                'case_study_2_why2': '**Buku tidak di tempat yang sama.** KENAPA? → Karena Rudi sering terburu-buru dan meletakkannya di tempat acak (sofa, meja makan, bawah kasur).',
+                'case_study_2_why3': '**Rudi terburu-buru dan acak.** KENAPA? → Karena dia mengerjakan PR di waktu yang berbeda-beda, dan tidak punya tas khusus untuk PR.',
+                'case_study_2_why4': '**Tidak punya tas khusus PR.** KENAPA? → Karena dia menggunakan tas sekolah yang sama, dan tas itu selalu penuh dengan mainan dan barang lain.',
+                'case_study_2_why5': '**Tas sekolah selalu penuh.** KENAPA? (AKAR MASALAH) → **Karena Rudi tidak memiliki sistem sederhana yang memberinya sinyal "Ini Khusus PR".**',
+                'case_study_3_title': 'TEMAN KHAYALAN (RUDI)',
+                'case_study_3_goal': '**Tujuan:** Ingin cepat selesai PR agar bisa langsung main bola.',
+                'case_study_3_likes': '**Kesukaan:** Warna kuning, karakter pahlawan super, stiker.',
+                'case_study_3_frustration': '**Kekesalan:** Harus mencari barang yang hilang, menunggu, dan membaca banyak tulisan.',
+                'case_study_4_title': 'PERNYATAAN B.K.D. (Siap Merancang)',
+                'case_study_4_desc': '"Bagaimana kita dapat menciptakan **sistem visual yang cepat dan menarik perhatian Rudi** (karena dia suka pahlawan super dan warna kuning) agar dia selalu tahu **di mana tempat menyimpan buku PR-nya**?"',
+                'case_study_solution': '<span class="font-bold">Solusi yang mungkin dibuat:</span> Membuat "Kotak Tugas Pahlawan" berwarna kuning dengan stiker pahlawan super, yang diletakkan persis di sebelah meja belajarnya. Kotak ini memberikan sinyal yang jelas bahwa "ini adalah rumah" untuk semua buku PR.',
+                // Step 1
+                'step_1_title': '1. Kumpulkan Petunjuk! (Tahap Menemukan)',
+                'step_1_inst': 'Cari 3 masalah kecil dari teman-temanmu. Tulis di "Post-it" di bawah.',
+                'problem_label_1': 'Masalah 1',
+                'problem_placeholder_1': 'Contoh: Kunci rumah sering hilang',
+                'problem_label_2': 'Masalah 2',
+                'problem_placeholder_2': 'Contoh: Kotak pensil terlalu kecil',
+                'problem_label_3': 'Masalah 3',
+                'problem_placeholder_3': 'Contoh: Bingung memilih baju untuk sekolah',
+                'save_button_1': 'Tulis Petunjuk di Post-it! 📝',
+                // Step 2
+                'step_2_title': '2. Fokus Pada Kasus Terbesar & Analisis "Kenapa?"',
+                'step_2_inst': 'Pilih satu masalah, cari akar masalahnya, lalu rumuskan menjadi peluang (B.K.D.).',
+                'select_problem_label': 'Pilih 1 Masalah Utama:',
+                'select_problem_default': '-- Pilih Masalah dari Petunjuk di Atas --',
+                'current_focus_title': 'Kasus Yang Akan Kita Selesaikan:',
+                'whys_section_title': 'Jalankan Teknik "Kenapa?" Lima Kali',
+                'whys_section_inst': 'Tanyakan "Kenapa?" terus sampai lima kali. Ini seperti mengupas bawang, sampai kita tahu **akar masalahnya** yang sesungguhnya!',
+                'why_label': 'KENAPA?',
+                'why_label_root': 'KENAPA? (AKAR MASALAH)',
+                'why_placeholder_1': 'Jawaban 1 (Gejala Masalah)',
+                'why_placeholder_2': 'Jawaban 2',
+                'why_placeholder_3': 'Jawaban 3',
+                'why_placeholder_4': 'Jawaban 4',
+                'why_placeholder_root': 'Jawaban 5 (Akar Masalah Sesungguhnya)',
+                'hmw_section_title': 'Ubah Menjadi Pertanyaan Peluang B.K.D.',
+                'hmw_section_inst': 'Gunakan format "Bagaimana Kita Dapat..." agar siap mencari solusi di Modul 2.',
+                'hmw_placeholder': 'Contoh: Bagaimana kita dapat menciptakan tempat penyimpanan yang mudah dijangkau Siti?',
+                'persona_section_title': 'Buat Teman Khayalan (Lengkap)',
+                'persona_label_name': 'Nama Teman Khayalan:',
+                'persona_placeholder_name': 'Contoh: Siti Si Pelupa',
+                'persona_label_age': 'Umur:',
+                'persona_placeholder_age': 'Contoh: 8',
+                'persona_label_goal': 'Tujuan (Apa yang Dia Mau):',
+                'persona_placeholder_goal': 'Contoh: Ingin selalu tepat waktu',
+                'persona_label_frustration': 'Kekesalan Utama (Apa yang Membuatnya Kesal):',
+                'persona_placeholder_frustration': 'Contoh: Dia kesal karena selalu dimarahi guru karena terlambat',
+                'persona_label_likes': 'Kesukaan (Hobi/Hal yang Disukai):',
+                'persona_placeholder_likes': 'Contoh: Suka bermain boneka, menggambar, dan membaca komik',
+                'persona_label_dislikes': 'Ketidaksukaan (Hal yang Tidak Disukai):',
+                'persona_placeholder_dislikes': 'Contoh: Tidak suka menunggu lama, tempat yang berantakan, dan bunyi keras',
+                'save_button_2': 'Selesaikan Analisis Detektif! 🔎',
+                // Step 3 (Recap)
+                'step_3_title': '3. Laporan Akhir Detektif (Siap Dirancang)',
+                'step_3_inst': 'Ini adalah ringkasan hasil analisis mendalam kita.',
+                'recap_problem_title': 'Masalah Utama Kita:',
+                'recap_root_cause_title': 'AKAR MASALAH SESUNGGUHNYA:',
+                'recap_hmw_title': 'PERTANYAAN PELUANG (B.K.D.):',
+                'recap_persona_title': 'Teman Khayalan (Lengkap) Kita:',
+                'recap_persona_name_age': 'Nama & Umur:',
+                'recap_years': 'tahun',
+                'recap_persona_goal': 'Tujuan Utama:',
+                'recap_persona_frustration': 'Kekesalan:',
+                'recap_persona_likes': 'Suka/Hobi:',
+                'recap_persona_dislikes': 'Tidak Suka:',
+                'recap_finished_message': '🎉 Kasus Selesai! Kita tahu siapa yang dibantu dan masalah apa yang harus diselesaikan. Mari ke Modul 2 untuk mencari IDE Solusi!',
+                // Dictionary
+                'dictionary_title': 'KAMUS RAHASIA DETEKTIF',
+                'dict_double_diamond': 'Cara kerja desainer profesional. Ini adalah nama resmi dari "Peta Harta Karun Berbentuk Berlian" yang kita gunakan.',
+                'dict_5_whys': 'Nama resmi dari teknik bertanya "Kenapa?" sampai 5 kali untuk menemukan akar masalah. Biasanya dipakai di dunia bisnis.',
+                'dict_persona': 'Nama resmi dari "Teman Khayalan" yang kita buat. Persona adalah profil detail yang mewakili pengguna (pemilik masalah) yang sebenarnya.',
+                'dict_hmw': 'Pertanyaan "Bagaimana Kita Dapat...". Ini mengubah masalah (negatif) menjadi kesempatan mencari solusi (positif).',
+                'dict_empathy': 'Kemampuan untuk merasakan apa yang dirasakan orang lain, yang sangat penting saat merancang solusi.',
+                'dict_ux': 'Singkatan untuk "Pengalaman Pengguna". Ini adalah perasaan atau pengalaman seseorang saat menggunakan produk atau solusi yang kita buat.',
+                'dict_4_stages': 'Ini adalah nama resmi dari 4 tahap di dalam Double Diamond: Menemukan, Menentukan Fokus, Mengembangkan, dan Mengirimkan.',
+
+                // JS Status/Defaults
+                'js_postit_title': 'Petunjuk #',
+                'js_select_problem_status': ' dipilih sebagai kasus utama. Mulai analisis "Kenapa?" di bawah.',
+                'js_status_need_3_clues': '⚠️ Detektif! Kita butuh 3 petunjuk untuk memulai.',
+                'js_status_clues_success': '✅ Petunjuk berhasil dikumpulkan! Sekarang ke Langkah 2: Pilih Kasus Terbesar!',
+                'js_status_select_problem_first': '⚠️ Pilih Masalah Utama dulu!',
+                'js_status_complete_5_whys': '⚠️ Lengkapi semua 5 Jawaban \'Kenapa?\' untuk menemukan Akar Masalah.',
+                'js_status_complete_hmw': '⚠️ Lengkapi Pertanyaan Peluang B.K.D. (HMW).',
+                'js_status_complete_persona': '⚠️ Ups! Profil Teman Khayalan harus diisi dengan lengkap.',
+                'js_status_analysis_success': '✅ BERHASIL! Analisis selesai. Lihat Laporan Akhir Detektif!',
+                'js_default_no_problem': '-- Belum ada masalah yang dipilih --',
+                'js_default_no_analysis': '-- Belum dianalisis (Jawaban ke-5 dari Teknik \'Kenapa?\') --',
+                'js_default_no_hmw': '-- Belum dirumuskan --',
+            },
+            'en': {
+                // Header
+                'title': 'MODULE 1: BECOME A DESIGN DETECTIVE! 🕵️‍♀️',
+                'subtitle': 'Our Mission: Find Out Why Your Friend is Sad and How to Help Them.',
+                // Why Section
+                'why_title': 'WHY SHOULD WE BECOME DESIGN DETECTIVES?',
+                'why_intro_1': 'Imagine you are an astronaut exploring the **Solar System**! To complete the mission, you must know every planet well:',
+                'why_mercury_desc': '**Mercury (The Speedy One):** You must know Mercury is very hot. The solution is, you need a super cool spacesuit.',
+                'why_neptune_desc': '**Neptune (The Cold One):** You must know Neptune is very cold and dark. The solution is, you need a strong heater and a giant flashlight.',
+                'why_earth_desc': '**Earth (Our Home):** You must know the needs on Earth (like water and air) so you can make it comfortable for everyone.',
+                'why_detective_analogy': 'Being a Design Detective is like being an astronaut:',
+                'why_detective_lesson': 'We cannot create a good solution **before** we truly understand who our user is (our planet) and what the real problem is (extreme storm or heat).',
+                'why_detective_summary': 'Our goal in this Module is to conduct **Problem Exploration** (like Solar System exploration) to find the hidden **Root Cause**!',
+                // Secret Box
+                'secret_box_title': 'Detective\'s Secret Box (Design Rules)',
+                'secret_box_1_title': '1. The Diamond-Shaped Treasure Map',
+                'secret_box_1_desc_1': '<span class="font-semibold">Diamond 1 (Discover Problem):</span> We look for all existing problems, then we focus on the most important one.',
+                'secret_box_1_desc_2': '<span class="font-semibold">Diamond 2 (Develop Solution):</span> After knowing the focus problem, we search for many ideas for solutions. Finally, we test the best idea.',
+                'secret_box_2_title': '2. The "Why?" Five Times Technique',
+                'secret_box_2_desc_1': 'Keep asking <span class="font-bold italic">"WHY?"</span> five times. This is like peeling an onion until we find the real **root cause**!',
+                'secret_box_2_desc_example': 'Example: "Toy is broken." WHY? "It fell." WHY? "It was on the edge of the table." WHY? "The table was full." WHY? "Doesn\'t have a bookshelf." (Root Cause: Lack of storage space.)',
+                'secret_box_3_title': '3. Creating an "Imaginary Friend"',
+                'secret_box_3_desc_1': 'We need to know who has the problem. Create a complete profile of this "Imaginary Friend" (Name, Age, Goal, Problem). A good solution is always tailored for one person!',
+                'secret_box_4_title': '4. Empathy Technique: Feeling',
+                'secret_box_4_desc_1': 'As Detectives, we must be able to <span class="font-bold italic">feel</span> what our "Imaginary Friend" feels. By understanding their feelings and preferences, we can create solutions that truly help and delight them.',
+                'secret_box_5_title': '5. The Magic Phrase: "How Might We (HMW)?"',
+                'secret_box_5_desc_1': 'After finding the Root Cause, turn that problem into an opportunity question. This question is called **How Might We (HMW)**?',
+                'secret_box_5_desc_example': 'Example: Root Cause: "Lack of storage space." HMW: "How might we create accessible storage for Siti?"',
+                // Case Study
+                'case_study_title': 'REAL-LIFE DESIGN DETECTIVE CASE',
+                'case_study_1_title': 'INITIAL PROBLEM',
+                'case_study_1_desc': 'Rudi (8 years old) always loses his homework book. He often cries and gets scolded by the teacher.',
+                'case_study_2_title': 'FIVE "WHY?" ANALYSIS',
+                'case_study_2_why1': '**Rudi Loses His Homework Book.** WHY? → Because the book is never in the same place.',
+                'case_study_2_why2': '**Book is not in the same place.** WHY? → Because Rudi is often in a hurry and puts it in random spots (sofa, dining table, under the bed).',
+                'case_study_2_why3': '**Rudi is in a hurry and random.** WHY? → Because he does homework at different times and doesn\'t have a dedicated bag for homework.',
+                'case_study_2_why4': '**No dedicated homework bag.** WHY? → Because he uses the same school bag, and that bag is always full of toys and other things.',
+                'case_study_2_why5': '**School bag is always full.** WHY? (ROOT CAUSE) → **Because Rudi lacks a simple system that signals to him "This is for Homework Only".**',
+                'case_study_3_title': 'IMAGINARY FRIEND (RUDI)',
+                'case_study_3_goal': '**Goal:** Wants to finish homework quickly so he can immediately play soccer.',
+                'case_study_3_likes': '**Likes:** Yellow color, superhero characters, stickers.',
+                'case_study_3_frustration': '**Frustration:** Having to search for lost items, waiting long, and reading lots of text.',
+                'case_study_4_title': 'HMW STATEMENT (Ready to Design)',
+                'case_study_4_desc': '"How might we create a **fast and visually appealing system for Rudi** (since he likes superheroes and the color yellow) so he always knows **where to store his homework book**?"',
+                'case_study_solution': '<span class="font-bold">Possible Solution:</span> Creating a yellow "Hero Task Box" with superhero stickers, placed right next to his study desk. This box gives a clear signal that "this is home" for all homework books.',
+                // Step 1
+                'step_1_title': '1. Gather Clues! (Discovery Phase)',
+                'step_1_inst': 'Find 3 small problems from your friends. Write them on the "Post-it" below.',
+                'problem_label_1': 'Problem 1',
+                'problem_placeholder_1': 'Example: House keys often go missing',
+                'problem_label_2': 'Problem 2',
+                'problem_placeholder_2': 'Example: Pencil case is too small',
+                'problem_label_3': 'Problem 3',
+                'problem_placeholder_3': 'Example: Confused about choosing clothes for school',
+                'save_button_1': 'Write Clues on Post-it! 📝',
+                // Step 2
+                'step_2_title': '2. Focus on the Biggest Case & "Why?" Analysis',
+                'step_2_inst': 'Choose one problem, find its root cause, then formulate it into an opportunity (HMW).',
+                'select_problem_label': 'Select 1 Main Problem:',
+                'select_problem_default': '-- Select a Problem from the Clues Above --',
+                'current_focus_title': 'The Case We Will Solve:',
+                'whys_section_title': 'Run the "Why?" Five Times Technique',
+                'whys_section_inst': 'Ask "Why?" continuously five times. This is like peeling an onion until you find the real **root cause**!',
+                'why_label': 'WHY?',
+                'why_label_root': 'WHY? (ROOT CAUSE)',
+                'why_placeholder_1': 'Answer 1 (Symptom)',
+                'why_placeholder_2': 'Answer 2',
+                'why_placeholder_3': 'Answer 3',
+                'why_placeholder_4': 'Answer 4',
+                'why_placeholder_root': 'Answer 5 (The Actual Root Cause)',
+                'hmw_section_title': 'Convert to HMW Opportunity Question',
+                'hmw_section_inst': 'Use the format "How Might We..." to be ready for finding solutions in Module 2.',
+                'hmw_placeholder': 'Example: How might we create accessible storage for Siti?',
+                'persona_section_title': 'Create the Imaginary Friend (Complete)',
+                'persona_label_name': 'Imaginary Friend\'s Name:',
+                'persona_placeholder_name': 'Example: Forgetful Siti',
+                'persona_label_age': 'Age:',
+                'persona_placeholder_age': 'Example: 8',
+                'persona_label_goal': 'Goal (What She Wants):',
+                'persona_placeholder_goal': 'Example: Wants to always be on time',
+                'persona_label_frustration': 'Main Frustration (What Makes Her Upset):',
+                'persona_placeholder_frustration': 'Example: She gets upset because the teacher always scolds her for being late',
+                'persona_label_likes': 'Likes (Hobbies/Things She Enjoys):',
+                'persona_placeholder_likes': 'Example: Loves playing with dolls, drawing, and reading comics',
+                'persona_label_dislikes': 'Dislikes (Things She Does Not Enjoy):',
+                'persona_placeholder_dislikes': 'Example: Does not like waiting long, messy places, and loud noises',
+                'save_button_2': 'Complete Detective Analysis! 🔎',
+                // Step 3 (Recap)
+                'step_3_title': '3. Final Detective Report (Ready to Design)',
+                'step_3_inst': 'This is the summary of our in-depth analysis.',
+                'recap_problem_title': 'Our Main Problem:',
+                'recap_root_cause_title': 'THE ACTUAL ROOT CAUSE:',
+                'recap_hmw_title': 'HMW OPPORTUNITY QUESTION:',
+                'recap_persona_title': 'Our Imaginary Friend (Complete):',
+                'recap_persona_name_age': 'Name & Age:',
+                'recap_years': 'years old',
+                'recap_persona_goal': 'Main Goal:',
+                'recap_persona_frustration': 'Frustration:',
+                'recap_persona_likes': 'Likes/Hobbies:',
+                'recap_persona_dislikes': 'Dislikes:',
+                'recap_finished_message': '🎉 Case Solved! We know who to help and what problem to solve. Let\'s move to Module 2 to find Solution IDEAS!',
+                // Dictionary
+                'dictionary_title': 'DETECTIVE\'S SECRET DICTIONARY',
+                'dict_double_diamond': 'The professional designer\'s working method. This is the official name of the "Diamond-Shaped Treasure Map" we use.',
+                'dict_5_whys': 'The official name for the technique of asking "Why?" 5 times to find the root cause. It is usually used in the business world.',
+                'dict_persona': 'The official name for the "Imaginary Friend" we create. A Persona is a detailed profile representing the actual user (the problem owner).',
+                'dict_hmw': 'The "How Might We..." question. It turns a problem (negative) into an opportunity to find a solution (positive).',
+                'dict_empathy': 'The ability to feel what others feel, which is essential when designing solutions.',
+                'dict_ux': 'Short for "User Experience". This is the feeling or experience someone has while using the product or solution we create.',
+                'dict_4_stages': 'These are the official names for the 4 stages in the Double Diamond: Discover, Define, Develop, and Deliver.',
+                
+                // JS Status/Defaults
+                'js_postit_title': 'Clue #',
+                'js_select_problem_status': ' selected as the main case. Start the "Why?" analysis below.',
+                'js_status_need_3_clues': '⚠️ Detective! We need 3 clues to start.',
+                'js_status_clues_success': '✅ Clues successfully gathered! Now to Step 2: Select the Biggest Case!',
+                'js_status_select_problem_first': '⚠️ Select the Main Problem first!',
+                'js_status_complete_5_whys': '⚠️ Complete all 5 "Why?" Answers to find the Root Cause.',
+                'js_status_complete_hmw': '⚠️ Complete the HMW Opportunity Question.',
+                'js_status_complete_persona': '⚠️ Oops! The Imaginary Friend profile must be fully completed.',
+                'js_status_analysis_success': '✅ SUCCESS! Analysis complete. See the Final Detective Report!',
+                'js_default_no_problem': '-- No problem selected yet --',
+                'js_default_no_analysis': '-- Not analyzed yet (5th Answer of the \'Why?\' Technique) --',
+                'js_default_no_hmw': '-- Not formulated yet --',
+            }
+        };
+
+        /**
+         * Sets the language of the entire application.
+         * @param {string} lang - 'id' or 'en'
+         */
+        function setLanguage(lang) {
+            currentLang = lang;
+            const t = translations[lang];
+
+            // 1. Update text content for all elements with data-translate
+            document.querySelectorAll('[data-translate]').forEach(el => {
+                const key = el.getAttribute('data-translate');
+                if (t[key]) {
+                    el.innerHTML = t[key];
+                }
+            });
+
+            // 2. Update placeholders for elements with data-translate-placeholder
+            document.querySelectorAll('[data-translate-placeholder]').forEach(el => {
+                const key = el.getAttribute('data-translate-placeholder');
+                if (t[key]) {
+                    el.placeholder = t[key];
+                }
+            });
+
+            // 3. Update the lang attribute on the HTML tag
+            document.documentElement.lang = lang;
+
+            // 4. Update the language buttons styling
+            document.getElementById('lang-id').classList.toggle('bg-orange-200', lang === 'id');
+            document.getElementById('lang-id').classList.toggle('bg-gray-200', lang === 'en');
+            document.getElementById('lang-en').classList.toggle('bg-orange-200', lang === 'en');
+            document.getElementById('lang-en').classList.toggle('bg-gray-200', lang === 'id');
+            document.getElementById('lang-id').classList.toggle('text-orange-800', lang === 'id');
+            document.getElementById('lang-id').classList.toggle('text-gray-800', lang === 'en');
+            document.getElementById('lang-en').classList.toggle('text-orange-800', lang === 'en');
+            document.getElementById('lang-en').classList.toggle('text-gray-800', lang === 'id');
+
+            // 5. Re-render dynamic content (like the recap section and dropdown)
+            updateRecap();
+            populateProblemSelection();
+            renderPostitProblems();
+        }
 
         // --- Step 1 Functions ---
 
@@ -507,12 +815,13 @@
         function renderPostitProblems() {
             const container = document.getElementById('postit-container');
             container.innerHTML = ''; 
+            const t = translations[currentLang];
 
             problems.forEach((p, index) => {
                 const card = document.createElement('div');
                 card.className = `postit p-4 rounded-lg transform rotate-1 transition duration-200 hover:rotate-0 hover:scale-105 cursor-pointer text-gray-800`;
                 card.innerHTML = `
-                    <p class="font-bold text-sm mb-1">Petunjuk #${index + 1}</p>
+                    <p class="font-bold text-sm mb-1">${t['js_postit_title']} ${index + 1}</p>
                     <p class="text-sm">${p}</p>
                 `;
                 // Add a click handler to pre-select the problem in the dropdown
@@ -521,7 +830,7 @@
                     updateFocusDisplay();
                     
                     const statusElement = document.getElementById('save-status-2');
-                    statusElement.textContent = `Petunjuk #${index + 1} dipilih sebagai kasus utama. Mulai analisis "Kenapa?" di bawah.`;
+                    statusElement.textContent = `${t['js_postit_title']}${index + 1}${t['js_select_problem_status']}`;
                     statusElement.classList.remove('text-red-500', 'text-green-600');
                     statusElement.classList.add('text-orange-500');
 
@@ -539,9 +848,10 @@
             const p2 = document.getElementById('problem2').value.trim();
             const p3 = document.getElementById('problem3').value.trim();
             const statusElement = document.getElementById('save-status-1');
+            const t = translations[currentLang];
 
             if (!p1 || !p2 || !p3) {
-                statusElement.textContent = "⚠️ Detektif! Kita butuh 3 petunjuk untuk memulai.";
+                statusElement.textContent = t['js_status_need_3_clues'];
                 statusElement.classList.remove('text-green-600');
                 statusElement.classList.add('text-red-500');
                 return;
@@ -550,7 +860,7 @@
             problems = [p1, p2, p3];
             
             // Update status
-            statusElement.textContent = "✅ Petunjuk berhasil dikumpulkan! Sekarang ke Langkah 2: Pilih Kasus Terbesar!";
+            statusElement.textContent = t['js_status_clues_success'];
             statusElement.classList.remove('text-red-500');
             statusElement.classList.add('text-green-600');
             
@@ -569,13 +879,23 @@
          */
         function populateProblemSelection() {
             const select = document.getElementById('selected-problem');
+            const t = translations[currentLang];
+            
             // Clear existing options, keeping the default
-            select.innerHTML = '<option value="">-- Pilih Masalah dari Petunjuk di Atas --</option>';
+            select.innerHTML = '';
+            
+            const defaultOption = document.createElement('option');
+            defaultOption.value = "";
+            defaultOption.textContent = t['select_problem_default'];
+            select.appendChild(defaultOption);
+
 
             problems.forEach((p, index) => {
                 const option = document.createElement('option');
                 option.value = p;
-                option.textContent = `Petunjuk ${index + 1}: ${p.substring(0, 70)}${p.length > 70 ? '...' : ''}`;
+                // Use a standard prefix for the option text
+                const prefix = currentLang === 'id' ? `Petunjuk ${index + 1}: ` : `Clue ${index + 1}: `;
+                option.textContent = prefix + p.substring(0, 70) + (p.length > 70 ? '...' : '');
                 select.appendChild(option);
             });
         }
@@ -624,10 +944,11 @@
             const pDislikes = document.getElementById('persona-dislikes').value.trim();
             
             const statusElement = document.getElementById('save-status-2');
+            const t = translations[currentLang];
 
             // --- Validation ---
             if (!selectedProblem) {
-                statusElement.textContent = "⚠️ Pilih Masalah Utama dulu!";
+                statusElement.textContent = t['js_status_select_problem_first'];
                 statusElement.classList.remove('text-green-600', 'text-orange-500');
                 statusElement.classList.add('text-red-500');
                 return;
@@ -635,21 +956,21 @@
             
             const whys = [why1, why2, why3, why4, why5];
             if (whys.some(w => w === '')) {
-                statusElement.textContent = "⚠️ Lengkapi semua 5 Jawaban 'Kenapa?' untuk menemukan Akar Masalah.";
+                statusElement.textContent = t['js_status_complete_5_whys'];
                 statusElement.classList.remove('text-green-600', 'text-orange-500');
                 statusElement.classList.add('text-red-500');
                 return;
             }
 
             if (!hmwQuestion) { // NEW VALIDATION
-                statusElement.textContent = "⚠️ Lengkapi Pertanyaan Peluang B.K.D. (HMW).";
+                statusElement.textContent = t['js_status_complete_hmw'];
                 statusElement.classList.remove('text-green-600', 'text-orange-500');
                 statusElement.classList.add('text-red-500');
                 return;
             }
 
             if (!pName || !pAge || !pGoal || !pFrustration || !pLikes || !pDislikes) {
-                statusElement.textContent = "⚠️ Ups! Profil Teman Khayalan harus diisi dengan lengkap.";
+                statusElement.textContent = t['js_status_complete_persona'];
                 statusElement.classList.remove('text-green-600', 'text-orange-500');
                 statusElement.classList.add('text-red-500');
                 return;
@@ -671,7 +992,7 @@
             updateRecap();
 
             // Success message
-            statusElement.textContent = "✅ BERHASIL! Analisis selesai. Lihat Laporan Akhir Detektif!";
+            statusElement.textContent = t['js_status_analysis_success'];
             statusElement.classList.remove('text-red-500', 'text-orange-500');
             statusElement.classList.add('text-green-600');
             
@@ -685,14 +1006,16 @@
          * Updates the recap section with the finalized data.
          */
         function updateRecap() {
-            document.getElementById('recap-problem').textContent = selectedProblem || "Belum ada masalah yang dipilih.";
+            const t = translations[currentLang];
+
+            document.getElementById('recap-problem').textContent = selectedProblem || t['js_default_no_problem'];
             
             // Akar Masalah (Why #5)
-            const rootCause = persona.whys ? persona.whys[4] : "-- Belum dianalisis (Jawaban ke-5 dari Teknik 'Kenapa?') --";
+            const rootCause = persona.whys ? persona.whys[4] : t['js_default_no_analysis'];
             document.getElementById('recap-root-cause').textContent = rootCause;
 
-            // HMW Question (NEW)
-            document.getElementById('recap-hmw').textContent = persona.hmw || "-- Belum dirumuskan --";
+            // HMW Question
+            document.getElementById('recap-hmw').textContent = persona.hmw || t['js_default_no_hmw'];
 
             // Persona Details
             document.getElementById('recap-p-name').textContent = persona.name || "--";
@@ -701,11 +1024,14 @@
             document.getElementById('recap-p-frustration').textContent = persona.frustration || "--";
             document.getElementById('recap-p-likes').textContent = persona.likes || "--";
             document.getElementById('recap-p-dislikes').textContent = persona.dislikes || "--";
+            
+            // Update recap years label (manually handled as it's a specific span within a data-translate block)
+            document.querySelector('[data-translate="recap_years"]').textContent = t['recap_years'];
         }
 
         // Initialize on load
         window.onload = function() {
-            // No initial actions needed other than loading the UI
+            setLanguage('id'); // Initialize with Indonesian
         };
 
     </script>
