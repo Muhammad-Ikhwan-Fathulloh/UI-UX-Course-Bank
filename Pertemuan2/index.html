@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerangka Teori: Ideasi, Persona, dan Wants vs. Needs</title>
+    <!-- Memuat Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Mengatur font default menjadi Inter */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 4px;
+            background-color: #3b82f6; /* Biru terang */
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-extrabold text-indigo-600">
+                <span class="block">Design Sprint Toolkit</span>
+            </h1>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#ideasi" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Ideasi</a>
+                <a href="#crazy8s" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Crazy 8s</a>
+                <a href="#persona" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Persona</a>
+                <a href="#needswants" class="text-gray-600 hover:text-indigo-700 font-medium transition duration-300">Needs vs Wants</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-indigo-600 text-white py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-indigo-200 text-lg mb-3">MODUL IDEASI & PERENCANAAN</p>
+            <h2 class="text-5xl font-extrabold mb-4 leading-tight">Menciptakan Solusi Berpusat pada Pengguna</h2>
+            <p class="text-xl text-indigo-100 max-w-3xl mx-auto">
+                Pelajari langkah-langkah esensial untuk mengubah pemahaman masalah menjadi solusi inovatif dan mendalam melalui Persona dan Teknik Brainstorming terstruktur.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <!-- 1. Ideasi & Persona Section -->
+        <section id="ideasi" class="mb-16">
+            <h3 class="text-4xl font-bold section-title mb-6">1. Ideasi & Persona</h3>
+            <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+                <p class="text-lg mb-4 text-gray-700">
+                    Fase **Ideasi** adalah jembatan antara identifikasi masalah (Define) dan implementasi (Prototype). Tujuannya adalah menghasilkan kuantitas ide solusi yang luas dan beragam.
+                </p>
+                <div class="grid md:grid-cols-2 gap-8 mt-8">
+                    <div>
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-3">Brainstorming Solusi</h4>
+                        <p class="text-gray-600">
+                            Fokus pada volume, bukan kualitas. Semua anggota tim harus berkontribusi untuk menciptakan ide-ide yang secara radikal berbeda, terutama untuk platform yang berbeda (mobile vs. website). Solusi untuk mobile mungkin berpusat pada kecepatan dan lokasi, sementara website berpusat pada konten mendalam dan navigasi kompleks.
+                        </p>
+                    </div>
+                    <div>
+                        <h4 class="text-2xl font-semibold text-blue-600 mb-3">Integrasi Persona</h4>
+                        <p class="text-gray-600">
+                            Setiap ide solusi harus diuji secara mental terhadap Persona target. Tanyakan: "Apakah solusi ini memecahkan *pain point* utama Persona X?" Ini memastikan solusi tetap relevan dan berpusat pada pengguna, bukan hanya 'ide keren'.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Crazy 8s Section -->
+        <section id="crazy8s" class="mb-16">
+            <h3 class="text-4xl font-bold section-title mb-6">2. Crazy 8s (45m)</h3>
+            <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+                <div class="flex items-start mb-6">
+                    <span class="text-3xl mr-4 text-pink-500">✏️</span>
+                    <h4 class="text-2xl font-semibold text-gray-800">Teknik Sketsa Cepat untuk Ide Maksimal</h4>
+                </div>
+                <p class="text-lg mb-4 text-gray-700">
+                    **Crazy 8s** adalah latihan inti dalam Design Sprint yang mendorong Anda untuk melampaui ide pertama yang jelas. Tujuannya adalah memaksakan variasi ide dalam waktu singkat, mengurangi sensor diri, dan memicu kreativitas di bawah tekanan waktu.
+                </p>
+                <ul class="list-none space-y-3 mt-6">
+                    <li class="flex items-start">
+                        <span class="text-green-500 font-bold mr-3">•</span>
+                        <div>
+                            <strong class="font-semibold">Format:</strong> Ambil selembar kertas, lipat menjadi delapan bagian.
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 font-bold mr-3">•</span>
+                        <div>
+                            <strong class="font-semibold">Waktu:</strong> 45 menit total, namun biasanya **6-8 menit** untuk sketsa 8 ide (kurang dari 1 menit per sketsa kasar).
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-green-500 font-bold mr-3">•</span>
+                        <div>
+                            <strong class="font-semibold">Aksi:</strong> Dalam setiap kotak, sketsakan ide kasar yang berbeda. Jangan fokus pada detail atau seni, fokus pada konsep solusi.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 3. Persona Lengkap Section -->
+        <section id="persona" class="mb-16">
+            <h3 class="text-4xl font-bold section-title mb-6">3. Persona Lengkap (45m)</h3>
+            <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+                <div class="flex items-start mb-6">
+                    <span class="text-3xl mr-4 text-purple-500">👤</span>
+                    <h4 class="text-2xl font-semibold text-gray-800">Persona Detil: Kebutuhan Mobile vs. Desktop</h4>
+                </div>
+                <p class="text-lg mb-4 text-gray-700">
+                    Persona adalah representasi semi-fiksi dari pengguna ideal Anda, dibuat berdasarkan data dan riset. Keberhasilannya terletak pada detail, terutama membedakan perilaku lintas platform.
+                </p>
+                <div class="mt-6 border border-purple-200 rounded-lg p-4 bg-purple-50">
+                    <strong class="text-purple-700 block mb-2">Fokus Utama dalam Pembuatan Persona:</strong>
+                    <ul class="list-disc list-inside space-y-2 ml-4">
+                        <li>**Tujuan (Goals):** Apa yang ingin mereka capai?</li>
+                        <li>**Kekesalan (Pain Points):** Apa hambatan utama yang mereka hadapi?</li>
+                        <li>**Skenario Penggunaan Mobile:** Kapan dan di mana mereka akan menggunakan aplikasi mobile? (Contoh: Saat bepergian, butuh notifikasi cepat, input data minimal).</li>
+                        <li>**Skenario Penggunaan Desktop/Website:** Kapan dan di mana mereka akan menggunakan website? (Contoh: Saat di kantor, butuh analisis data mendalam, form input yang panjang, multi-tasking).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Konsep Needs vs Wants Section -->
+        <section id="needswants" class="mb-16">
+            <h3 class="text-4xl font-bold section-title mb-6">4. Konsep Needs vs Wants</h3>
+            <div class="bg-white p-6 md:p-10 rounded-xl shadow-lg border border-gray-100">
+                <p class="text-lg mb-4 text-gray-700">
+                    Membedakan **Needs (Kebutuhan)** dan **Wants (Keinginan)** adalah kunci untuk memprioritaskan fitur. Ini membantu tim memastikan mereka membangun produk yang *penting* sebelum membangun produk yang *sekadar menyenangkan*.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <!-- NEEDS Card -->
+                    <div class="border-t-4 border-red-500 bg-red-50 p-6 rounded-lg shadow-md">
+                        <h5 class="text-2xl font-bold text-red-700 mb-2">Kebutuhan (Needs)</h5>
+                        <p class="text-red-600 mb-3">
+                            Hal-hal yang mutlak harus ada agar solusi dapat memecahkan masalah dasar Persona. Tanpa ini, produk tidak dapat digunakan atau tidak memiliki nilai inti.
+                        </p>
+                        <strong class="text-red-800">Contoh:</strong> Pengguna *perlu* bisa masuk ke akun untuk mengakses data mereka (Fungsi inti).
+                    </div>
+
+                    <!-- WANTS Card -->
+                    <div class="border-t-4 border-amber-500 bg-amber-50 p-6 rounded-lg shadow-md">
+                        <h5 class="text-2xl font-bold text-amber-700 mb-2">Keinginan (Wants)</h5>
+                        <p class="text-amber-600 mb-3">
+                            Fitur tambahan atau peningkatan yang membuat produk lebih menyenangkan, efisien, atau menarik, tetapi tidak kritis untuk menyelesaikan tugas dasar.
+                        </p>
+                        <strong class="text-amber-800">Contoh:</strong> Pengguna *ingin* bisa mengubah tema warna aplikasi (Fitur nice-to-have).
+                    </div>
+                </div>
+                <p class="mt-4 text-sm text-gray-500 italic">
+                    Prioritas harus selalu mengarah pada pemenuhan Needs (Kebutuhan) terlebih dahulu.
+                </p>
+            </div>
+        </section>
+
+        <!-- Tools & Resources -->
+        <section class="mt-16 text-center">
+            <h3 class="text-3xl font-bold text-indigo-600 mb-4">Alat dan Sumber Daya</h3>
+            <p class="text-lg text-gray-600 mb-6">Untuk menjalankan sesi ini, pastikan Anda memiliki:</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full shadow-inner">Kertas & Pena</span>
+                <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full shadow-inner">Template Persona (Digital/Fisik)</span>
+                <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full shadow-inner">Timer (Untuk Crazy 8s)</span>
+                <span class="bg-indigo-100 text-indigo-800 text-lg font-medium px-4 py-2 rounded-full shadow-inner">Papan Tulis/Digital Board</span>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white mt-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center">
+            <p>&copy; 2024 Design Thinking Framework. Semua Hak Dilindungi.</p>
+            <p class="text-sm text-gray-400 mt-2">Dibuat untuk mempercepat proses ideasi dan validasi solusi.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
